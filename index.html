@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OnlyFans - Online Shop</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">OnlyFans</div>
+        <nav class="nav-links">
+            <a href="products.html">Products</a>
+            <a href="about.html">About us</a>
+            <a href="#">Contact</a>
+        </nav>
+        <button class="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+        </button>
+    </header>
+
+    <!-- Off-Canvas Warenkorb -->
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Your cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-content">
+            <!-- Hier kommen später die Artikel im Warenkorb hin -->
+            <p>Ihr Warenkorb ist noch leer.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                Subtotal: <span id="cartSubtotal">€0.00</span>
+            </div>
+            <a href="#" class="view-cart-button">VIEW CART</a>
+            <button class="checkout-button">CHECKOUT</button>
+        </div>
+    </aside>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Stay Cool in Style<br><span>Discover Premium Fans for Every Room</span></h1>
+            <p>Keep your space cool and comfortable with our stylish, high-performance fans for every need.</p>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search for fans">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why">
+        <div class="container-wrapper">
+            <div class="why__inner">
+                <div class="why__intro">
+                    <h2 class="why__title">
+                        Why<br>Choosing Us
+                    </h2>
+                </div>
+                <div class="why__features">
+                    <article class="feature">
+                        <h3 class="feature__title">Premium Quality</h3>
+                        <p class="feature__desc">
+                            All of our fans are made with premium quality materials that will last a long time.
+                        </p>
+                        <a href="#" class="btn">
+                            More Info <span class="arrow">→</span>
+                        </a>
+                    </article>
+                    <article class="feature">
+                        <h3 class="feature__title">Energy Efficiency</h3>
+                        <p class="feature__desc">
+                            We provide many energy efficient fan options to help you save money on your electricity
+                            bill.
+                        </p>
+                        <a href="#" class="btn">
+                            More Info <span class="arrow">→</span>
+                        </a>
+                    </article>
+                    <article class="feature">
+                        <h3 class="feature__title">Variety of Choices</h3>
+                        <p class="feature__desc">
+                            We have a big variety of fan options to fit your needs. From small fans for small spaces to
+                            big fans for big spaces.
+                        </p>
+                        <a href="#" class="btn">
+                            More Info <span class="arrow">→</span>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" aria-label="Best Selling Products">
+        <div class="container-wrapper">
+            <h2 class="products__title">Best Selling Product</h2>
+
+            <!-- Filter-Tabs -->
+            <ul class="products__filters" role="tablist">
+                <li class="products__filter products__filter--active" role="tab" aria-selected="true"
+                    data-category="ceiling">Ceiling Fans</li>
+                <li class="products__filter" role="tab" aria-selected="false" data-category="standing">Standing Fans
+                </li>
+                <li class="products__filter" role="tab" aria-selected="false" data-category="desk">Desk Fans</li>
+                <li class="products__filter" role="tab" aria-selected="false" data-category="wall">Wall Fans</li>
+            </ul>
+
+            <!-- Carousel -->
+            <div class="products__carousel">
+                <button class="products__arrow products__arrow--prev" aria-label="Zurück"><i
+                        class="fas fa-chevron-left"></i></button>
+
+                <div class="products__list">
+                    <!-- Sample Product-Card -->
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Fan</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" data-name="Product Impact" data-price="350.00"
+                                    data-image="images/Main_Fan2.png">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Fan</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" data-name="Product Impact2" data-price="350.00"
+                                    data-image="images/Main_Fan2.png">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Hallo</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" aria-label="In den Warenkorb"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Fan</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" aria-label="In den Warenkorb"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Fan</h3>
+                            <p class="product-card__stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </p>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" aria-label="In den Warenkorb"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Fan</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" aria-label="In den Warenkorb"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Normal Fan</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$392</span>
+                                <button class="product-card__add" aria-label="In den Warenkorb"><i
+                                        class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Weitere Cards… (immer data-category passend setzen) -->
+                </div>
+
+                <button class="products__arrow products__arrow--next" aria-label="Weiter"><i
+                        class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <a href="#" class="products__view-all">View All <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+
+
+    <!-- Experience Section -->
+    <section class="experience-section">
+        <div class="container-wrapper container">
+            <!-- Linke Spalte: Bild mit dekorativen Hintergründen -->
+            <div class="image-wrapper">
+                <img src="images/Main_Fan.png" alt="Stylisches Interior">
+            </div>
+
+            <!-- Rechte Spalte: Textinhalt -->
+            <div class="content">
+                <span class="subtitle">EXPERIENCES</span>
+                <h2>We Provide You The<br>Best Experience</h2>
+                <p>
+                    You don’t have to worry about the result because all of these interiors are made by
+                    people who are professionals in their fields with an elegant and luxurious style and
+                    with premium quality materials.
+                </p>
+                <a href="#" class="btn">
+                    More Info <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials-section">
+        <div class="container-wrapper container">
+            <div class="text-content">
+                <span class="subtitle">Materials</span>
+                <h2>Very Serious<br>Fans For Your Home</h2>
+                <p>
+                    Because OnlyFans was very serious about designing fans for our environment, we have created a
+                    range of fans that are not just functional but truly beautiful pieces of design.
+                </p>
+                <a href="#" class="btn">
+                    More Info <span class="arrow">→</span>
+                </a>
+            </div>
+            <section class="image-layout">
+                <div class="left-column">
+                    <img src="images/Main_Fan2.png" alt="Bild 1" class="image small" />
+                    <img src="images/Main_Fan2.png" alt="Bild 2" class="image small" />
+                </div>
+                <div class="right-column">
+                    <img src="images/Main_Fan2.png" alt="Bild 3" class="image large" />
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <div class="review-section">
+        <div class="reviews-header">
+            <span class="subtitle">Testimonials</span>
+            <h2 class="title">Our Client Reviews</h2>
+        </div>
+
+        <div class="reviews">
+            <div class="review-card">
+                <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="Avatar Jonas">
+                <h3>Jonas</h3>
+                <p class="role">Jonas Pfeffermann</p>
+                <blockquote>
+                    “Absolutely thrilled with my new fan from OnlyFans! It's whisper-quiet, incredibly stylish, and
+                    keeps my
+                    workspace perfectly cool.”
+                </blockquote>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star inactive">★</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img class="avatar" src="https://i.pravatar.cc/80?img=48" alt="Avatar Beggi">
+                <h3>Beggi</h3>
+                <p class="role">Beggi Becks</p>
+                <blockquote>
+                    “OnlyFans offers fans that are not just functional but truly beautiful pieces of design. They blend
+                    seamlessly into modern interiors while providing powerful, quiet cooling.”
+                </blockquote>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star inactive">★</span>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <img class="avatar" src="https://i.pravatar.cc/80?img=65" alt="Avatar Jakob">
+                <h3>Jakob</h3>
+                <p class="role">Jakob Brille</p>
+                <blockquote>
+                    “OnlyFans redefines what a fan can be: combining high performance with sleek, minimalist design.
+                    It's
+                    more than just a cooling device - it's a statement.”
+                </blockquote>
+                <div class="stars">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <!-- Spalte 1: Logo/Text -->
+            <div class="footer-column about">
+                <h3>OnlyFans</h3>
+                <p>
+                    The advantage of hiring a workspace with us is that gives you comfortable
+                    service and all-around facilities.
+                </p>
+            </div>
+            <!-- Spalte 2: Services -->
+            <div class="footer-column links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Email Marketing</a></li>
+                    <li><a href="#">Campaigns</a></li>
+                    <li><a href="#">Branding</a></li>
+                </ul>
+            </div>
+            <!-- Spalte 3: Furniture -->
+            <div class="footer-column links">
+                <h4>Furniture</h4>
+                <ul>
+                    <li><a href="#">Beds</a></li>
+                    <li><a href="#">Chair</a></li>
+                    <li><a href="#">All</a></li>
+                </ul>
+            </div>
+            <!-- Spalte 4: Social -->
+            <div class="footer-column social">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                    <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                    <a href="#"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2021 Panto. All rights reserved.</p>
+            <div class="footer-policies">
+                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="productCarousel.js"></script>
+    <script src="shoppingCart.js"></script>
+</body>
+
+</html>

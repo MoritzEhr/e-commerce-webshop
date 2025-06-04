@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop mit Side-Cart</title>
+    <link rel="stylesheet" href="styles/products.css" />
+</head>
+
+<body>
+    <!-- Beispiel: Warenkorb-Button -->
+    <button class="cart-button">🛒 Warenkorb (<span id="cartCount">0</span>)</button>
+
+    <!-- Beispiel-Inhalt / Produkte -->
+    <div class="products">
+        <div class="product-card">
+            <img src="images/Main_Fan2.png" alt="Product Carousel" />
+            <h3>Product Carousel</h3>
+            <p>€250.00</p>
+            <button class="product-card__add" data-name="Product Carousel" data-price="250.00"
+                data-image="images/Main_Fan2.png">
+                In den Warenkorb
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="images/Main_Fan2.png" alt="Product Columns" />
+            <h3>Product Columns</h3>
+            <p>€150.00</p>
+            <button class="product-card__add" data-name="Product Columns" data-price="150.00"
+                data-image="images/Main_Fan2.png">
+                In den Warenkorb
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="images/Main_Fan2.png" alt="Product Stacked" />
+            <h3>Product Stacked</h3>
+            <p>€135.00</p>
+            <button class="product-card__add" data-name="Product Stacked" data-price="135.00"
+                data-image="images/Main_Fan2.png">
+                In den Warenkorb
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="images/Main_Fan2.png" alt="Product Split" />
+            <h3>Product Split</h3>
+            <p>€70.00</p>
+            <button class="product-card__add" data-name="Product Split" data-price="70.00"
+                data-image="images/Main_Fan2.png">
+                In den Warenkorb
+            </button>
+        </div>
+        <div class="product-card">
+            <img src="images/Main_Fan2.png" alt="Product Impact" />
+            <h3>Product Impact</h3>
+            <p>€350.00</p>
+            <button class="product-card__add" data-name="Product Impact" data-price="350.00"
+                data-image="images/Main_Fan2.png">+</button>
+        </div>
+    </div>
+
+    <!-- Off-Canvas Warenkorb -->
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Ihr Warenkorb</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-content">
+            <p>Ihr Warenkorb ist noch leer.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                Subtotal: <span id="cartSubtotal">€0.00</span>
+            </div>
+            <a href="#" class="view-cart-button">VIEW CART</a>
+            <button class="checkout-button">CHECKOUT</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+/* styles.css */
+
+/* --- Grundlegende Body-Settings --- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fafafa;
+}
+
+/* --- Warenkorb-Button oben rechts --- */
+.cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  z-index: 1100;
+}
+
+.cart-button:hover {
+  background-color: #555;
+}
+
+/* --- Beispiel-Produktkarten (dient nur zur Demo) --- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.product-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.product-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.product-card__add {
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.product-card__add:hover {
+  background-color: #218838;
+}
+
+/* --- Off-Canvas Warenkorb-Panel --- */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  max-width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+/* Wenn .open angehängt, rutscht das Panel rein */
+.cart-panel.open {
+  transform: translateX(0);
+}
+
+/* --- Header im Warenkorb --- */
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* --- Content-Bereich im Warenkorb (scrollbar falls nötig) --- */
+.cart-content {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background-color: #fafafa;
+}
+
+/* Wenn der Warenkorb leer ist */
+.cart-content p {
+  text-align: center;
+  color: #777;
+  margin-top: 2rem;
+}
+
+/* --- Einzelne Cart-Items — Layout --- */
+.cart-item {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.cart-item-image img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.cart-item-details {
+  flex: 1;
+  margin-left: 0.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Erste Zeile: Name und Remove-Button --- */
+.cart-item-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item-name {
+  font-size: 1rem;
+  color: #333;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #999;
+}
+
+.remove-item:hover {
+  color: #333;
+}
+
+/* Zweite Zeile: Menge × Preis --- */
+.cart-item-quantity-price {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* --- Footer im Warenkorb: Subtotal + Buttons --- */
+.cart-footer {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.cart-subtotal {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  color: #333;
+}
+
+.view-cart-button {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.view-cart-button:hover {
+  color: #000;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.checkout-button:hover {
+  background-color: #555;
+}

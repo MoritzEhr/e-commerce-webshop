@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Warenkorb</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome (für das Warenkorb-Icon) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <style>
+    /* Basis-Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .cart-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 1100;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .cart-button:hover {
+      background-color: #0056b3;
+    }
+
+    #cartSidebar {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 350px;
+      height: 100%;
+      background-color: #fff;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+      transition: right 0.3s ease;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    #cartSidebar.open {
+      right: 0;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.5rem;
+    }
+
+    .cart-content {
+      margin-top: 1rem;
+    }
+
+    #closeCartBtn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Warenkorb-Button -->
+  <button class="cart-button">
+    <i class="fas fa-shopping-cart"></i>
+  </button>
+
+  <!-- Seitenleiste für den Warenkorb -->
+  <div id="cartSidebar">
+    <div class="cart-header">
+      <h2>Warenkorb</h2>
+      <button id="closeCartBtn">✖</button>
+    </div>
+    <div class="cart-content">
+      <p>Dein Warenkorb ist leer.</p>
+      <!-- Hier kannst du später Artikel dynamisch einfügen -->
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const openBtn = document.querySelector('.cart-button');
+    const closeBtn = document.getElementById('closeCartBtn');
+    const cartSidebar = document.getElementById('cartSidebar');
+
+    openBtn.addEventListener('click', () => {
+      cartSidebar.classList.add('open');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      cartSidebar.classList.remove('open');
+    });
+  </script>
+</body>
+</html>
