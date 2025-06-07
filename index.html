@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProFans - Online Shop</title>
     <title>ProFans - Online Shop</title>
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/home.css" />
@@ -11,27 +12,32 @@
 </head>
 
 <body>
+    <div id="overlay"></div>
+    <div id="header-sentinel"></div>
     <header class="main-header">
         <div class="logo">ProFans</div>
+        <div class="logo">ProFans</div>
         <nav class="nav-links">
+            <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href="about.html">About us</a>
-            <a href="#">Contact</a>
+            <a href="">FAQ</a>
         </nav>
         <button class="cart-button">
             <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount" class="cart-count-badge">0</span>
         </button>
     </header>
 
-    <!-- Off-Canvas Warenkorb -->
+    <!-- Off-Canvas Cart -->
     <aside class="cart-panel" id="cartPanel">
         <div class="cart-header">
-            <h2>Your cart</h2>
+            <h2>Your Cart</h2>
             <button class="close-cart" id="closeCart">&times;</button>
         </div>
         <div class="cart-content">
-            <!-- Hier kommen später die Artikel im Warenkorb hin -->
-            <p>Ihr Warenkorb ist noch leer.</p>
+            <!-- Items in the cart will be added here later -->
+            <p>Your cart is currently empty.</p>
         </div>
         <div class="cart-footer">
             <div class="cart-subtotal">
@@ -41,8 +47,6 @@
             <button class="checkout-button">CHECKOUT</button>
         </div>
     </aside>
-
-
 
     <!-- Hero Section -->
     <section class="hero">
@@ -108,18 +112,18 @@
             <h2 class="products__title">Best Selling Products</h2>
 
             <!-- Filter-Tabs -->
-            <ul class="products__filters" role="tablist">
-                <li class="products__filter products__filter--active" role="tab" aria-selected="true"
+            <ul class="products__tabs" role="tablist">
+                <li class="products__tab products__tab--active" role="tab" aria-selected="true"
                     data-category="ceiling">Ceiling Fans</li>
-                <li class="products__filter" role="tab" aria-selected="false" data-category="standing">Standing Fans
+                <li class="products__tab" role="tab" aria-selected="false" data-category="standing">Standing Fans
                 </li>
-                <li class="products__filter" role="tab" aria-selected="false" data-category="desk">Desk Fans</li>
-                <li class="products__filter" role="tab" aria-selected="false" data-category="wall">Wall Fans</li>
+                <li class="products__tab" role="tab" aria-selected="false" data-category="desk">Desk Fans</li>
+                <li class="products__tab" role="tab" aria-selected="false" data-category="wall">Wall Fans</li>
             </ul>
 
             <!-- Carousel -->
             <div class="products__carousel">
-                <button class="products__arrow products__arrow--prev" aria-label="Zurück"><i
+                <button class="products__arrow products__arrow--prev" aria-label="Previous"><i
                         class="fas fa-chevron-left"></i></button>
 
                 <div class="products__list">
@@ -157,6 +161,8 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">$129</span>
                                 <button class="product-card__add" data-name="Product Impact2" data-price="129.00"
+                                <span class="product-card__price">$149</span>
+                                <button class="product-card__add" data-name="Product Impact" data-price="149.00"
                                     data-image="images/Main_Fan2.png">+</button>
                             </div>
                         </div>
@@ -165,6 +171,26 @@
                     <article class="product-card" data-category="chair">
                         <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
                         <div class="product-card__body">
+                            <h3 class="product-card__title">Better Fan</h3>
+                            <div class="stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                            </div>
+                            <div class="product-card__footer">
+                                <span class="product-card__price">$129</span>
+                                <button class="product-card__add" data-name="Product Impact2" data-price="129.00"
+                                    data-image="images/Main_Fan2.png">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card" data-category="chair">
+                        <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
+                        <div class="product-card__body">
+                            <h3 class="product-card__title">Best Fan </h3>
                             <h3 class="product-card__title">Best Fan </h3>
                             <div class="stars">
                                 <span class="star">★</span>
@@ -176,6 +202,8 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">$349</span>
                                 <button class="product-card__add" data-name="Product Impact3" data-price="349.00"
+                                <span class="product-card__price">$349</span>
+                                <button class="product-card__add" data-name="Product Impact3" data-price="349.00"
                                     data-image="images/Main_Fan2.png">+</button>
                             </div>
                         </div>
@@ -185,6 +213,7 @@
                         <img src="images/fan-paceholder.png" alt="Sakarias Armchair" class="product-card__img">
                         <div class="product-card__body">
                             <h3 class="product-card__title">Opti Fan</h3>
+                            <h3 class="product-card__title">Opti Fan</h3>
                             <div class="stars">
                                 <span class="star">★</span>
                                 <span class="star">★</span>
@@ -193,6 +222,9 @@
                                 <span class="star">★</span>
                             </div>
                             <div class="product-card__footer">
+                                <span class="product-card__price">$189</span>
+                                <button class="product-card__add" data-name="Product Impact4" data-price="189.00"
+                                    data-image="images/Main_Fan2.png">+</button>
                                 <span class="product-card__price">$189</span>
                                 <button class="product-card__add" data-name="Product Impact4" data-price="189.00"
                                     data-image="images/Main_Fan2.png">+</button>
@@ -215,6 +247,9 @@
                                 <span class="product-card__price">$249</span>
                                 <button class="product-card__add" data-name="Product Impact5" data-price="249.00"
                                     data-image="images/Main_Fan2.png">+</button>
+                                <span class="product-card__price">$249</span>
+                                <button class="product-card__add" data-name="Product Impact5" data-price="249.00"
+                                    data-image="images/Main_Fan2.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -232,6 +267,8 @@
                             </div>
                             <div class="product-card__footer">
                                 <span class="product-card__price">$392</span>
+                                <button class="product-card__add" data-name="Product Impact6" data-price="392.00"
+                                    data-image="images/Main_Fan2.png">+</button>
                                 <button class="product-card__add" data-name="Product Impact6" data-price="392.00"
                                     data-image="images/Main_Fan2.png">+</button>
                             </div>
@@ -257,10 +294,10 @@
                         </div>
                     </article>
 
-                    <!-- Weitere Cards… (immer data-category passend setzen) -->
+                    <!-- More Cards… (always set data-category accordingly) -->
                 </div>
 
-                <button class="products__arrow products__arrow--next" aria-label="Weiter"><i
+                <button class="products__arrow products__arrow--next" aria-label="Next"><i
                         class="fas fa-chevron-right"></i></button>
             </div>
 
@@ -268,16 +305,15 @@
         </div>
     </section>
 
-
     <!-- Experience Section -->
     <section class="experience-section">
         <div class="container-wrapper container">
-            <!-- Linke Spalte: Bild mit dekorativen Hintergründen -->
+            <!-- Left Column: Image with decorative backgrounds -->
             <div class="image-wrapper">
-                <img src="images/Main_Fan.png" alt="Stylisches Interior">
+                <img src="images/Main_Fan.png" alt="Stylish Interior">
             </div>
 
-            <!-- Rechte Spalte: Textinhalt -->
+            <!-- Right Column: Text content -->
             <div class="content">
                 <span class="subtitle">EXPERIENCES</span>
                 <h2>We Provide You The<br>Best Experience</h2>
@@ -301,6 +337,7 @@
                 <h2>Very Serious<br>Fans For Your Home</h2>
                 <p>
                     Because ProFans was very serious about designing fans for our environment, we have created a
+                    Because ProFans was very serious about designing fans for our environment, we have created a
                     range of fans that are not just functional but truly beautiful pieces of design.
                 </p>
                 <a href="#" class="btn">
@@ -309,11 +346,11 @@
             </div>
             <section class="image-layout">
                 <div class="left-column">
-                    <img src="images/Main_Fan2.png" alt="Bild 1" class="image small" />
-                    <img src="images/Main_Fan2.png" alt="Bild 2" class="image small" />
+                    <img src="images/Main_Fan2.png" alt="Image 1" class="image small" />
+                    <img src="images/Main_Fan2.png" alt="Image 2" class="image small" />
                 </div>
                 <div class="right-column">
-                    <img src="images/Main_Fan2.png" alt="Bild 3" class="image large" />
+                    <img src="images/Main_Fan2.png" alt="Image 3" class="image large" />
                 </div>
             </section>
         </div>
@@ -333,6 +370,7 @@
                 <p class="role">Jonas Pfeffermann</p>
                 <blockquote>
                     “Absolutely thrilled with my new fan from ProFans! It's whisper-quiet, incredibly stylish, and
+                    “Absolutely thrilled with my new fan from ProFans! It's whisper-quiet, incredibly stylish, and
                     keeps my
                     workspace perfectly cool.”
                 </blockquote>
@@ -351,6 +389,7 @@
                 <p class="role">Beggi Becks</p>
                 <blockquote>
                     “ProFans offers fans that are not just functional but truly beautiful pieces of design. They blend
+                    “ProFans offers fans that are not just functional but truly beautiful pieces of design. They blend
                     seamlessly into modern interiors while providing powerful, quiet cooling.”
                 </blockquote>
                 <div class="stars">
@@ -368,6 +407,7 @@
                 <p class="role">Jakob Brille</p>
                 <blockquote>
                     “ProFans redefines what a fan can be: combining high performance with sleek, minimalist design.
+                    “ProFans redefines what a fan can be: combining high performance with sleek, minimalist design.
                     It's
                     more than just a cooling device - it's a statement.”
                 </blockquote>
@@ -382,17 +422,20 @@
         </div>
     </div>
 
-    <!-- Footer -->
+       <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-top">
+            <!-- Column 1: Logo/Text -->
             <!-- Spalte 1: Logo/Text -->
             <div class="footer-column about">
+                <h3>ProFans</h3>
                 <h3>ProFans</h3>
                 <p>
                     The advantage of hiring a workspace with us is that gives you comfortable
                     service and all-around facilities.
                 </p>
             </div>
+            <!-- Column 2: Services -->
             <!-- Spalte 2: Services -->
             <div class="footer-column links">
                 <h4>Services</h4>
@@ -402,15 +445,20 @@
                     <li><a href="#">Branding</a></li>
                 </ul>
             </div>
-            <!-- Spalte 3: Furniture -->
+            <!-- Column 3: Our Fans -->
+            <!-- Spalte 3: Our Fans -->
             <div class="footer-column links">
-                <h4>Furniture</h4>
+                <h4>Our Fans</h4>
                 <ul>
+                    <li><a href="#">Ceiling Fans</a></li>
+                    <li><a href="#">Standing Fans</a></li>
+                    <li><a href="#">Desk Fans</a></li>
                     <li><a href="#">Ceiling Fans</a></li>
                     <li><a href="#">Standing Fans</a></li>
                     <li><a href="#">Desk Fans</a></li>
                 </ul>
             </div>
+            <!-- Column 4: Social -->
             <!-- Spalte 4: Social -->
             <div class="footer-column social">
                 <h4>Follow Us</h4>
@@ -433,6 +481,7 @@
 
     <script src="productCarousel.js"></script>
     <script src="shoppingCart.js"></script>
+    <script src="scrollLogicHeader.js"></script>
 </body>
 
 </html>

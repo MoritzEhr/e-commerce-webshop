@@ -23,13 +23,15 @@ closeCart.addEventListener("click", () => {
 function renderCart() {
   cartContent.innerHTML = "";
 
-  // Wenn leer
   if (cartItems.length === 0) {
     cartContent.innerHTML = "<p>Ihr Warenkorb ist noch leer.</p>";
-    cartCount.textContent = "0";
     cartSubtotalEl.textContent = "€0.00";
+
+    // Badge verstecken
+    cartCount.style.display = "none";
     return;
   }
+
 
   // Für jedes Item ein .cart-item erzeugen
   cartItems.forEach((item) => {
@@ -93,6 +95,15 @@ function renderCart() {
   // ‣ Gesamtanzahl aktualisieren
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   cartCount.textContent = totalCount;
+
+    if (totalCount > 0) {
+    // Wert setzen und Badge einblenden
+    cartCount.textContent = totalCount;
+    cartCount.style.display = "inline-block";
+  } else {
+    // Bei 0 verstecken
+    cartCount.style.display = "none";
+  }
 }
 
 // ‣ Artikel hinzufügen (wird durch Button-Click ausgelöst)
