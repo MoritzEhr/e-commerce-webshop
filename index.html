@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,27 +11,31 @@
 </head>
 
 <body>
+    <div id="overlay"></div>
+    <div id="header-sentinel"></div>
     <header class="main-header">
         <div class="logo">ProFans</div>
         <nav class="nav-links">
+            <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href="about.html">About us</a>
-            <a href="#">Contact</a>
+            <a href="">FAQ</a>
         </nav>
         <button class="cart-button">
             <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount" class="cart-count-badge">0</span>
         </button>
     </header>
 
-    <!-- Off-Canvas Warenkorb -->
+    <!-- Off-Canvas Cart -->
     <aside class="cart-panel" id="cartPanel">
         <div class="cart-header">
-            <h2>Your cart</h2>
+            <h2>Your Cart</h2>
             <button class="close-cart" id="closeCart">&times;</button>
         </div>
         <div class="cart-content">
-            <!-- Hier kommen später die Artikel im Warenkorb hin -->
-            <p>Ihr Warenkorb ist noch leer.</p>
+            <!-- Items in the cart will be added here later -->
+            <p>Your cart is currently empty.</p>
         </div>
         <div class="cart-footer">
             <div class="cart-subtotal">
@@ -41,8 +45,6 @@
             <button class="checkout-button">CHECKOUT</button>
         </div>
     </aside>
-
-
 
     <!-- Hero Section -->
     <section class="hero">
@@ -108,18 +110,18 @@
             <h2 class="products__title">Best Selling Product</h2>
 
             <!-- Filter-Tabs -->
-            <ul class="products__filters" role="tablist">
-                <li class="products__filter products__filter--active" role="tab" aria-selected="true"
+            <ul class="products__tabs" role="tablist">
+                <li class="products__tab products__tab--active" role="tab" aria-selected="true"
                     data-category="ceiling">Ceiling Fans</li>
-                <li class="products__filter" role="tab" aria-selected="false" data-category="standing">Standing Fans
+                <li class="products__tab" role="tab" aria-selected="false" data-category="standing">Standing Fans
                 </li>
-                <li class="products__filter" role="tab" aria-selected="false" data-category="desk">Desk Fans</li>
-                <li class="products__filter" role="tab" aria-selected="false" data-category="wall">Wall Fans</li>
+                <li class="products__tab" role="tab" aria-selected="false" data-category="desk">Desk Fans</li>
+                <li class="products__tab" role="tab" aria-selected="false" data-category="wall">Wall Fans</li>
             </ul>
 
             <!-- Carousel -->
             <div class="products__carousel">
-                <button class="products__arrow products__arrow--prev" aria-label="Zurück"><i
+                <button class="products__arrow products__arrow--prev" aria-label="Previous"><i
                         class="fas fa-chevron-left"></i></button>
 
                 <div class="products__list">
@@ -251,16 +253,16 @@
                             </div>
                             <div class="product-card__footer">
                                 <span class="product-card__price">$392</span>
-                             <button class="product-card__add" data-name="Product Impact7" data-price="392.00"
+                                <button class="product-card__add" data-name="Product Impact7" data-price="392.00"
                                     data-image="images/Main_Fan2.png">+</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Weitere Cards… (immer data-category passend setzen) -->
+                    <!-- More Cards… (always set data-category accordingly) -->
                 </div>
 
-                <button class="products__arrow products__arrow--next" aria-label="Weiter"><i
+                <button class="products__arrow products__arrow--next" aria-label="Next"><i
                         class="fas fa-chevron-right"></i></button>
             </div>
 
@@ -268,16 +270,15 @@
         </div>
     </section>
 
-
     <!-- Experience Section -->
     <section class="experience-section">
         <div class="container-wrapper container">
-            <!-- Linke Spalte: Bild mit dekorativen Hintergründen -->
+            <!-- Left Column: Image with decorative backgrounds -->
             <div class="image-wrapper">
-                <img src="images/Main_Fan.png" alt="Stylisches Interior">
+                <img src="images/Main_Fan.png" alt="Stylish Interior">
             </div>
 
-            <!-- Rechte Spalte: Textinhalt -->
+            <!-- Right Column: Text content -->
             <div class="content">
                 <span class="subtitle">EXPERIENCES</span>
                 <h2>We Provide You The<br>Best Experience</h2>
@@ -309,11 +310,11 @@
             </div>
             <section class="image-layout">
                 <div class="left-column">
-                    <img src="images/Main_Fan2.png" alt="Bild 1" class="image small" />
-                    <img src="images/Main_Fan2.png" alt="Bild 2" class="image small" />
+                    <img src="images/Main_Fan2.png" alt="Image 1" class="image small" />
+                    <img src="images/Main_Fan2.png" alt="Image 2" class="image small" />
                 </div>
                 <div class="right-column">
-                    <img src="images/Main_Fan2.png" alt="Bild 3" class="image large" />
+                    <img src="images/Main_Fan2.png" alt="Image 3" class="image large" />
                 </div>
             </section>
         </div>
@@ -382,9 +383,10 @@
         </div>
     </div>
 
-    <!-- Footer -->
+       <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-top">
+            <!-- Column 1: Logo/Text -->
             <!-- Spalte 1: Logo/Text -->
             <div class="footer-column about">
                 <h3>ProFans</h3>
@@ -393,6 +395,7 @@
                     service and all-around facilities.
                 </p>
             </div>
+            <!-- Column 2: Services -->
             <!-- Spalte 2: Services -->
             <div class="footer-column links">
                 <h4>Services</h4>
@@ -402,15 +405,17 @@
                     <li><a href="#">Branding</a></li>
                 </ul>
             </div>
-            <!-- Spalte 3: Furniture -->
+            <!-- Column 3: Our Fans -->
+            <!-- Spalte 3: Our Fans -->
             <div class="footer-column links">
-                <h4>Furniture</h4>
+                <h4>Our Fans</h4>
                 <ul>
                     <li><a href="#">Ceiling Fans</a></li>
                     <li><a href="#">Standing Fans</a></li>
                     <li><a href="#">Desk Fans</a></li>
                 </ul>
             </div>
+            <!-- Column 4: Social -->
             <!-- Spalte 4: Social -->
             <div class="footer-column social">
                 <h4>Follow Us</h4>
@@ -423,7 +428,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2021 ProFans. All rights reserved.</p>
+            <p>© 2025 ProFans. All rights reserved.</p>
             <div class="footer-policies">
                 <a href="#">Terms &amp; Conditions</a>
                 <a href="#">Privacy Policy</a>
@@ -433,6 +438,7 @@
 
     <script src="productCarousel.js"></script>
     <script src="shoppingCart.js"></script>
+    <script src="scrollLogicHeader.js"></script>
 </body>
 
 </html>

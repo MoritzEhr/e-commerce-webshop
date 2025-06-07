@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.querySelector(".products__arrow--prev");
   const nextBtn = document.querySelector(".products__arrow--next");
   const productCards = document.querySelectorAll(".product-card");
-  const filterTabs = document.querySelectorAll(".products__filter");
+  const filterTabs = document.querySelectorAll(".products__tab");
 
   let scrollAmount = 0;
   const scrollStep = 300; // anpassen je nach Kartengröße
@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const category = tab.getAttribute("data-category");
 
       // Tab-Styles updaten
-      filterTabs.forEach(t => t.classList.remove("products__filter--active"));
-      tab.classList.add("products__filter--active");
+      filterTabs.forEach(t => t.classList.remove("products__tab--active"));
+      tab.classList.add("products__tab--active");
 
       // Karten filtern
       productCards.forEach(card => {
@@ -83,3 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateArrowButtons(); // initialer Status beim Laden
 });
+
+
+
+
