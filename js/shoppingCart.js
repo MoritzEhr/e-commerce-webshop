@@ -1,13 +1,11 @@
-/* script.js */
-
-const cartButton   = document.querySelector(".cart-button");
-const cartPanel    = document.getElementById("cartPanel");
-const closeCart    = document.getElementById("closeCart");
-const cartContent  = cartPanel.querySelector(".cart-content");
-const cartCount    = document.getElementById("cartCount");
+const cartButton     = document.querySelector(".cart-button");
+const cartPanel      = document.getElementById("cartPanel");
+const closeCart      = document.getElementById("closeCart");
+const cartContent    = cartPanel.querySelector(".cart-content");
+const cartCount      = document.getElementById("cartCount");
 const cartSubtotalEl = document.getElementById("cartSubtotal");
 
-let cartItems = [];
+let cartItems = loadCart(); // Bestehende Daten laden
 
 // ‣ Warenkorb öffnen
 cartButton.addEventListener("click", () => {
@@ -19,25 +17,25 @@ closeCart.addEventListener("click", () => {
   cartPanel.classList.remove("open");
 });
 
-// ‣ Wenn außerhalb des Panels geklickt wird, schließe es
-document.addEventListener("click", (event) => {
-  if (
-    !cartPanel.contains(event.target) &&
-    !cartButton.contains(event.target)
-  ) {
-    cartPanel.classList.remove("open");
-  }
-});
+// ‣ Funktion: Warenkorb aus localStorage laden oder initialisieren
+function loadCart() {
+  const savedCart = localStorage.getItem("cartItems");
+  return savedCart ? JSON.parse(savedCart) : [];
+}
+
+// ‣ Funktion: Warenkorb im localStorage speichern
+function saveCart() {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
 
 // ‣ Render-Funktion: Inhalt des Warenkorbs aufbauen
 function renderCart() {
   cartContent.innerHTML = "";
 
-  // Wenn leer
   if (cartItems.length === 0) {
     cartContent.innerHTML = "<p>Ihr Warenkorb ist noch leer.</p>";
-    cartCount.textContent = "0";
     cartSubtotalEl.textContent = "€0.00";
+    cartCount.style.display = "none";
     return;
   }
 
@@ -102,10 +100,15 @@ function renderCart() {
 
   // ‣ Gesamtanzahl aktualisieren
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  cartCount.textContent = totalCount;
+  if (totalCount > 0) {
+    cartCount.textContent = totalCount;
+    cartCount.style.display = "inline-block";
+  } else {
+    cartCount.style.display = "none";
+  }
 }
 
-// ‣ Artikel hinzufügen (wird durch Button-Click ausgelöst)
+// ‣ Artikel hinzufügen (ausgelöst durch Button-Click)
 function addToCart(name, price, image) {
   const existingItem = cartItems.find((itm) => itm.name === name);
   if (existingItem) {
@@ -113,6 +116,7 @@ function addToCart(name, price, image) {
   } else {
     cartItems.push({ name, price, image, quantity: 1 });
   }
+  saveCart();    // Warenkorb nach Änderung speichern
   renderCart();
   cartPanel.classList.add("open");
 }
@@ -120,6 +124,7 @@ function addToCart(name, price, image) {
 // ‣ Artikel komplett aus dem Warenkorb entfernen
 function removeFromCart(name) {
   cartItems = cartItems.filter((itm) => itm.name !== name);
+  saveCart();    // Warenkorb nach Änderung speichern
   renderCart();
 }
 
@@ -133,5 +138,65 @@ document.querySelectorAll(".product-card__add").forEach((button) => {
   });
 });
 
-// Initiales Rendern (Warenkorb leer)
+// Initiales Rendern (mit geladenen Daten)
 renderCart();
+
+// shoppingCart.js
+document.addEventListener("DOMContentLoaded", function () {
+  // Funktion: Warenkorb laden (aus localStorage, falls vorhanden)
+  function loadCart() {
+    const savedCart = localStorage.getItem("cartItems");
+    return savedCart ? JSON.parse(savedCart) : [];
+  }
+
+  // Wird beim Laden der Seite aufgerufen, um den Warenkorb in der Checkout-Ansicht darzustellen
+  function renderCart() {
+    const cartItems = loadCart();
+    const cartItemsContainer = document.querySelector(".cart-items");
+    cartItemsContainer.innerHTML = "";
+
+    // Wenn keine Artikel vorhanden sind, Meldung anzeigen
+    if (cartItems.length === 0) {
+      cartItemsContainer.innerHTML = "<p>Your cart is currently empty.</p>";
+      document.getElementById("total").textContent = "€0.00";
+      return;
+    }
+
+    // Zwischensumme berechnen
+    let subtotal = 0;
+
+    // Für jeden Artikel einen Eintrag im Warenkorb erstellen
+    cartItems.forEach((item) => {
+      // Artikel Element
+      const itemEl = document.createElement("div");
+      itemEl.classList.add("cart-item");
+
+      // Du kannst hier das Markup weiter anpassen – dieses Beispiel zeigt Bild, Name, Menge und Preis:
+      itemEl.innerHTML = `
+        <div class="cart-item-image">
+          <img src="${item.image}" alt="${item.name}">
+        </div>
+        <div class="cart-item-details">
+          <div class="cart-item-name">${item.name}</div>
+          <div class="cart-item-qty-price">
+            ${item.quantity} × €${parseFloat(item.price).toFixed(2)}
+          </div>
+        </div>
+      `;
+      cartItemsContainer.appendChild(itemEl);
+
+      subtotal += item.quantity * parseFloat(item.price);
+    });
+
+    // Gesamtpreis aktualisieren
+    document.getElementById("total").textContent = `€${subtotal.toFixed(2)}`;
+  }
+
+  // Beim Laden der Seite den Warenkorb rendern
+  renderCart();
+
+  // Optional: Falls du dynamische Aktualisierungen vornehmen möchtest, 
+  // kannst du EventListener hinzufügen, die bei Änderungen (z.B. Artikel entfernen) auch renderCart() erneut aufrufen.
+});
+
+

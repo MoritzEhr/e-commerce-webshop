@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProFans - Online Shop</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/shoppingCart.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">ProFans</div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About us</a>
+            <a href="">FAQ</a>
+        </nav>
+        <button class="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cartCount" class="cart-count-badge">0</span>
+        </button>
+    </header>
+
+    <!-- Off-Canvas Cart -->
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-content">
+            <!-- Items in the cart will be added here later -->
+            <p>Your cart is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                Subtotal: <span id="cartSubtotal">€0.00</span>
+            </div>
+            <a href="shoppingCart.html" class="view-cart-button">VIEW CART</a>
+            <button class="checkout-button">CHECKOUT</button>
+        </div>
+    </aside>
+
+    <main>
+        <div class="checkout-timeline">
+            <div class="timeline-step active" data-step="cart">
+                <div class="step-number">1</div>
+                <div class="step-label">Shopping Cart</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-step" data-step="personal">
+                <div class="step-number">2</div>
+                <div class="step-label">Personal Info</div>
+            </div>
+            <div class="timeline-connector"></div>
+            <div class="timeline-step" data-step="checkout">
+                <div class="step-number">3</div>
+                <div class="step-label">Checkout</div>
+            </div>
+        </div>
+
+        <div class="cart-container">
+            <!-- Shopping Cart Section -->
+            <div class="checkout-section active" id="cart-section">
+                <h1>Shopping Cart</h1>
+                <div class="cart-items">
+                    <!-- Cart items will be added here later -->
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">€0.00</span>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button class="next-button" id="nextToPersonal">Continue to Personal Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Info Section -->
+            <div class="checkout-section" id="personal-section">
+                <h1>Personal Information</h1>
+                <form id="personalInfoForm" class="personal-info-form">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postalCode">Postal Code</label>
+                        <input type="text" id="postalCode" name="postalCode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select a country</option>
+                            <option value="DE">Germany</option>
+                            <option value="AT">Austria</option>
+                            <option value="CH">Switzerland</option>
+                        </select>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="button" class="back-button" id="backToCart">Back to Cart</button>
+                        <button type="button" class="next-button" id="nextToCheckout">Continue to Checkout</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Checkout Section -->
+            <div class="checkout-section" id="checkout-section">
+                <h1>Checkout</h1>
+                <p>Payment section will be implemented here.</p>
+                <div class="navigation-buttons">
+                    <button type="button" class="back-button" id="backToPersonal">Back to Personal Info</button>
+                    <button type="button" class="next-button" id="completePurchase">Complete Purchase</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="js/shoppingCart.js"></script>
+</body>
+
+</html>

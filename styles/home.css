@@ -20,13 +20,19 @@
   }
 }
 
+
+.main-header {
+  position: absolute;
+  color: var(--color-white)
+}
+
 /* Hero Section */
 .hero {
   height: 100vh;
   display: flex;
   align-items: flex-start;
   padding-top: 10rem;
-  /* Abstand vom oberen Rand */
+
   justify-content: center;
   text-align: center;
   position: relative;
@@ -47,24 +53,19 @@
   z-index: 2;
   max-width: 600px;
   padding: 2rem;
+  color: var(--color-white);
 }
 
 .hero-content h1 {
   font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
-
-}
-
-.hero-content h1 span {
-  color: var(--color-white);
-  ;
 }
 
 .hero-content p {
   margin-top: 1rem;
   font-size: 1rem;
-  color: var(--color-shade1);
+  color: var(--color-shade2);
 }
 
 /* Search Box */
@@ -286,7 +287,7 @@
   color: var(--color-accent);
 }
 
-.products__tabs{
+.products__tabs {
   display: flex;
   width: max-content;
   margin: 0 auto 3rem;
@@ -294,7 +295,8 @@
   border-radius: 50px;
   padding: 0.4rem;
   gap: 1rem;
-  list-style: none;;
+  list-style: none;
+  ;
 }
 
 .products__tab {

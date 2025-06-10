@@ -23,7 +23,6 @@ html {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  color: var(--color-white);
 }
 
 /* --- Header Section --- */
@@ -33,15 +32,18 @@ body {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   padding: 1.5rem 3rem;
-  position: absolute;
   width: 100%;
   top: 0;
   z-index: 20;
+  font-weight: 500;
   background: transparent;
-
   transform-origin: top center;
   transform: translateY(0);
   transition: transform 0.2s ease-out, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links a.active {
+  color: var(--color-primary);
 }
 
 .main-header.sticky {
@@ -80,7 +82,6 @@ body {
 .nav-links a {
   text-decoration: none;
   color: inherit;
-  font-weight: 500;
   transition: color 0.3s;
 }
 
@@ -177,7 +178,7 @@ body {
 .close-cart {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
 }
 
@@ -301,4 +302,3 @@ body {
   background-color: var(--color-accent);
   transition: background-color 0.2s;
 }
-
