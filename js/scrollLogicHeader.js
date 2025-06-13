@@ -31,12 +31,3 @@ document.addEventListener('DOMContentLoaded', () => {
     io.observe(sentinel);
 });
 
-cartButton.addEventListener("click", () => {
-  cartPanel.classList.add("open");
-  document.body.classList.add("cart-open"); // Overlay aktivieren
-});
-
-closeCart.addEventListener("click", () => {
-  cartPanel.classList.remove("open");
-  document.body.classList.remove("cart-open"); // Overlay entfernen
-});

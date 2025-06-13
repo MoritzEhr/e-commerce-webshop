@@ -1,8 +1,8 @@
-const cartButton     = document.querySelector(".cart-button");
-const cartPanel      = document.getElementById("cartPanel");
-const closeCart      = document.getElementById("closeCart");
-const cartContent    = cartPanel.querySelector(".cart-content");
-const cartCount      = document.getElementById("cartCount");
+const cartButton = document.querySelector(".cart-button");
+const cartPanel = document.getElementById("cartPanel");
+const closeCart = document.getElementById("closeCart");
+const cartContent = cartPanel.querySelector(".cart-content");
+const cartCount = document.getElementById("cartCount");
 const cartSubtotalEl = document.getElementById("cartSubtotal");
 
 let cartItems = loadCart(); // Bestehende Daten laden
@@ -98,6 +98,12 @@ function renderCart() {
   }, 0);
   cartSubtotalEl.textContent = `€${subtotal.toFixed(2)}`;
 
+  // Update checkout total if it exists
+  const checkoutTotal = document.getElementById("checkoutTotal");
+  if (checkoutTotal) {
+    checkoutTotal.textContent = `€${subtotal.toFixed(2)}`;
+  }
+
   // ‣ Gesamtanzahl aktualisieren
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
   if (totalCount > 0) {
@@ -114,9 +120,14 @@ function addToCart(name, price, image) {
   if (existingItem) {
     existingItem.quantity++;
   } else {
-    cartItems.push({ name, price, image, quantity: 1 });
+    cartItems.push({
+      name,
+      price,
+      image,
+      quantity: 1
+    });
   }
-  saveCart();    // Warenkorb nach Änderung speichern
+  saveCart(); // Warenkorb nach Änderung speichern
   renderCart();
   cartPanel.classList.add("open");
 }
@@ -124,14 +135,14 @@ function addToCart(name, price, image) {
 // ‣ Artikel komplett aus dem Warenkorb entfernen
 function removeFromCart(name) {
   cartItems = cartItems.filter((itm) => itm.name !== name);
-  saveCart();    // Warenkorb nach Änderung speichern
+  saveCart(); // Warenkorb nach Änderung speichern
   renderCart();
 }
 
-// ‣ „In den Warenkorb“-Buttons anknüpfen
+// ‣ "In den Warenkorb"-Buttons anknüpfen
 document.querySelectorAll(".product-card__add").forEach((button) => {
   button.addEventListener("click", () => {
-    const name  = button.getAttribute("data-name");
+    const name = button.getAttribute("data-name");
     const price = button.getAttribute("data-price");
     const image = button.getAttribute("data-image");
     addToCart(name, price, image);
@@ -194,9 +205,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Beim Laden der Seite den Warenkorb rendern
   renderCart();
-
-  // Optional: Falls du dynamische Aktualisierungen vornehmen möchtest, 
-  // kannst du EventListener hinzufügen, die bei Änderungen (z.B. Artikel entfernen) auch renderCart() erneut aufrufen.
 });
 
+cartButton.addEventListener("click", () => {
+  cartPanel.classList.add("open");
+  document.body.classList.add("cart-open"); // Overlay aktivieren
+});
 
+closeCart.addEventListener("click", () => {
+  cartPanel.classList.remove("open");
+  document.body.classList.remove("cart-open"); // Overlay entfernen
+});

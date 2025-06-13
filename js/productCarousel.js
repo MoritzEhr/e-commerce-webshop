@@ -22,32 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth"
     });
   });
-
-  // Filter-Logik
-  filterTabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      const category = tab.getAttribute("data-category");
-
-      // Tab-Styles updaten
-      filterTabs.forEach(t => t.classList.remove("products__tab--active"));
-      tab.classList.add("products__tab--active");
-
-      // Karten filtern
-      productCards.forEach(card => {
-        if (category === "all" || card.dataset.category === category) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
-
-      // Zurückscrollen
-      productList.scrollTo({
-        left: 0,
-        behavior: "auto"
-      });
-    });
-  });
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -81,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
   productList.addEventListener("scroll", updateArrowButtons);
   window.addEventListener("resize", updateArrowButtons);
 
-  updateArrowButtons(); // initialer Status beim Laden
+  updateArrowButtons(); 
 });
 
 

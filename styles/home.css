@@ -26,28 +26,39 @@
   color: var(--color-white)
 }
 
+.main-header.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+}
+
+.main-header.sticky.show {
+  transform: translateY(0);
+}
+
+#header-sentinel {
+  height: 80px;
+  margin-bottom: -80px;
+}
+
+
 /* Hero Section */
 .hero {
   height: 100vh;
   display: flex;
   align-items: flex-start;
   padding-top: 10rem;
-
   justify-content: center;
   text-align: center;
   position: relative;
-  background: url('../images/Main_Fan3.png') no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/Main_Fan3.png') no-repeat center/cover;
+  background-attachment: scroll;
 }
 
-.hero .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
 
 .hero-content {
   z-index: 2;
@@ -106,7 +117,6 @@
   margin: 5px;
   border-radius: 50%;
   color: var(--color-white);
-  ;
   font-size: 1rem;
   cursor: pointer;
   display: flex;
@@ -285,34 +295,6 @@
   text-decoration: none;
   font-weight: 500;
   color: var(--color-accent);
-}
-
-.products__tabs {
-  display: flex;
-  width: max-content;
-  margin: 0 auto 3rem;
-  background-color: var(--color-shade2);
-  border-radius: 50px;
-  padding: 0.4rem;
-  gap: 1rem;
-  list-style: none;
-  ;
-}
-
-.products__tab {
-  padding: 0.6rem 1.2rem;
-  border-radius: 50px;
-  background-color: transparent;
-  color: var(--color-black);
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.products__tab--active {
-  background-color: var(--color-white);
-  color: var(--color-black);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Why Choosing Us */
@@ -513,110 +495,6 @@
 
 
 
-/* Footer */
-.site-footer {
-  background-color: var(--color-shade1);
-  color: var(--color-shade3)
-}
-
-/* Footer-Top: 4 Spalten */
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-}
-
-.footer-column.about h3 {
-  font-size: 1.6rem;
-  color: var(--color-black);
-  margin-bottom: 15px;
-}
-
-.footer-column.about p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-/* Überschriften der Link-Spalten */
-.footer-column h4 {
-  font-size: 1.1rem;
-  color: var(--color-primary);
-  margin-bottom: 15px;
-  font-weight: normal;
-}
-
-/* Listen-Links */
-.footer-column.links ul {
-  list-style: none;
-}
-
-.footer-column.links li {
-  margin-bottom: 10px;
-}
-
-.footer-column.links a {
-  color: var(--color-shade3);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-column.links a:hover {
-  color: var(--color-accent);
-}
-
-/* Social Links */
-.footer-column.social .social-links a {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  color: var(--color-shade3);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-column.social .social-links a i {
-  margin-right: 8px;
-}
-
-.footer-column.social .social-links a:hover {
-  color: var(--color-accent);
-}
-
-/* ─ Footer-Bottom: Copyright & Policies ─ */
-.footer-bottom {
-  padding: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-}
-
-.footer-bottom p {
-  color: var(--color-shade3);
-}
-
-.footer-policies a {
-  margin-left: 20px;
-  color: var(--color-shade3);
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.footer-policies a:hover {
-  color: var(--color-accent);
-}
-
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .footer-top {
@@ -676,7 +554,7 @@
   flex-direction: column;
   position: relative;
   background: var(--color-white);
-  border-radius: 1.5rem;
+  border-radius: 20px;
   padding: 4rem 1.5rem 2rem;
   width: 300px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);

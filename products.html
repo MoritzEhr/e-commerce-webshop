@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/products.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
@@ -39,15 +40,117 @@
         </div>
         <div class="cart-footer">
             <div class="cart-subtotal">
-                Subtotal: <span id="cartSubtotal">€0.00</span>
+                Total: <span id="cartSubtotal">€0.00</span>
             </div>
             <a href="shoppingCart.html" class="view-cart-button">VIEW CART</a>
             <button class="checkout-button">CHECKOUT</button>
         </div>
     </aside>
 
+    <div class="overlay"></div>
+    <main>
+        <div class="search-box">
+            <input type="text" placeholder="Search for fans...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <ul class="product-list">
+            <li class="product-item">
+                <img src="images/Main_Fan.png" alt="ProFan 2000">
+                <div class="product-info">
+                    <h3>ProFan 2000</h3>
+                    <p>High-performance desk fan with 3 speed settings</p>
+                    <span class="price">€89.99</span>
+                    <button class="add-to-cart" data-name="ProFan 2000" data-price="89.99"
+                        data-image="images/Main_Fan1.png">
+                        Add to Cart
+                    </button>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="images/Main_Fan2.png" alt="ProFan 3000">
+                <div class="product-info">
+                    <h3>ProFan 3000</h3>
+                    <p>Premium tower fan with remote control</p>
+                    <span class="price">€129.99</span>
+                    <button class="add-to-cart" data-name="ProFan 3000" data-price="129.99"
+                        data-image="images/Main_Fan2.png">
+                        Add to Cart
+                    </button>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="images/Main_Fan3.png" alt="ProFan Mini">
+                <div class="product-info">
+                    <h3>ProFan Mini</h3>
+                    <p>Compact USB fan for your desk</p>
+                    <span class="price">€29.99</span>
+                    <button class="add-to-cart" data-name="ProFan Mini" data-price="29.99"
+                        data-image="images/Main_Fan3.png">
+                        Add to Cart
+                    </button>
+                </div>
+            </li>
+            <li class="product-item">
+                <img src="images/Main_Fan.png" alt="ProFan Industrial">
+                <div class="product-info">
+                    <h3>ProFan Industrial</h3>
+                    <p>Heavy-duty industrial fan for large spaces</p>
+                    <span class="price">€199.99</span>
+                    <button class="add-to-cart" data-name="ProFan Industrial" data-price="199.99"
+                        data-image="images/Main_Fan4.png">
+                        Add to Cart
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+
+            <div class="footer-column about">
+                <h3>ProFans</h3>
+                <p>
+                    The advantage of hiring a workspace with us is that gives you comfortable
+                    service and all-around facilities.
+                </p>
+            </div>
+
+            <div class="footer-column links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column links">
+                <h4>Our Fans</h4>
+                <ul>
+                    <li><a href="products.html">Ceiling fans</a></li>
+                    <li><a href="products.html">Standing fans</a></li>
+                    <li><a href="products.html">Special fans</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column social">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
+                            class="fab fa-facebook-f"></i><span>Facebook</span></a>
+                    <a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span>Twitter</span></a>
+                    <a href="https://www.instagram.com/onlyfans_jena/"><i
+                            class="fab fa-instagram"></i><span>Instagram</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="js/shoppingCart.js"></script>
+    <script src="js/searchBar.js"></script>
+    <script src="js/homeSearchBar"></script>
 </body>
 
 </html>

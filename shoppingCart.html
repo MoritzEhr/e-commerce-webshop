@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/shoppingCart.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
 <body>
+    <div id="overlay"></div>
     <header class="main-header">
         <div class="logo">ProFans</div>
         <nav class="nav-links">
@@ -38,14 +39,14 @@
         </div>
         <div class="cart-footer">
             <div class="cart-subtotal">
-                Subtotal: <span id="cartSubtotal">€0.00</span>
+                Total: <span id="cartSubtotal">€0.00</span>
             </div>
             <a href="shoppingCart.html" class="view-cart-button">VIEW CART</a>
             <button class="checkout-button">CHECKOUT</button>
         </div>
     </aside>
-
     <main>
+
         <div class="checkout-timeline">
             <div class="timeline-step active" data-step="cart">
                 <div class="step-number">1</div>
@@ -122,26 +123,62 @@
                             <option value="CH">Switzerland</option>
                         </select>
                     </div>
-                    <div class="navigation-buttons">
-                        <button type="button" class="back-button" id="backToCart">Back to Cart</button>
-                        <button type="button" class="next-button" id="nextToCheckout">Continue to Checkout</button>
-                    </div>
                 </form>
+                <div class="navigation-buttons">
+                    <button type="button" class="back-button" id="backToCart">Back to Cart</button>
+                    <button type="button" class="next-button" id="nextToCheckout">Continue to Checkout</button>
+                </div>
             </div>
 
             <!-- Checkout Section -->
             <div class="checkout-section" id="checkout-section">
-                <h1>Checkout</h1>
-                <p>Payment section will be implemented here.</p>
-                <div class="navigation-buttons">
-                    <button type="button" class="back-button" id="backToPersonal">Back to Personal Info</button>
-                    <button type="button" class="next-button" id="completePurchase">Complete Purchase</button>
+                <h1>Payment</h1>
+                <div class="order-summary">
+                    <div class="order-totals">
+                        <div class="total">
+                            <span>Total:</span>
+                            <span id="checkoutTotal">€0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-details">
+                    <form id="paymentForm" class="payment-form">
+
+                        <!-- Credit Card Fields -->
+                        <div id="credit-card-fields" class="payment-fields">
+                            <div class="form-group">
+                                <label for="cardName">Name on Card</label>
+                                <input type="text" id="cardName" name="cardName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
+                                    maxlength="19" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry Date</label>
+                                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY"
+                                        maxlength="5" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="navigation-buttons">
+                        <button type="button" class="back-button" id="backToPersonal">Back to Personal Info</button>
+                        <button type="submit" class="submit-button" id="placeOrder">Place Order</button>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-
+    <script src="js/checkout.js"></script>
     <script src="js/shoppingCart.js"></script>
 </body>
 
