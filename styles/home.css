@@ -55,7 +55,7 @@
   justify-content: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/Main_Fan3.png') no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../images/main_test9.jpeg') no-repeat center/cover;
   background-attachment: scroll;
 }
 
