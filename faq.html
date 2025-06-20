@@ -12,20 +12,29 @@
 </head>
 
 <body>
-
     <div id="overlay"></div>
     <div id="header-sentinel"></div>
     <header class="main-header">
         <a class="logo" href="index.html">ProFans</a>
+        <button class="nav-toggle" aria-label="Menu open/close" aria-expanded="false">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </button>
         <nav class="nav-links">
-            <a href="index.html">Home</a>
+            <a href="index.html"">Home</a>
             <a href="products.html">Products</a>
             <a href="about.html">About us</a>
-            <a href="faq.html" class="active">FAQ</a>
+            <a href="faq.html"  class="active">FAQ</a>
+            <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display:none">
+                <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="cart-count-badge" id="mobileCartCount">0</span>
+                Cart
+            </a>
         </nav>
-        <button class="cart-button">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount" class="cart-count-badge">0</span>
+        <button class="cart-button" aria-label="Warenkorb anzeigen" id="headerCartButton">
+            <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+            <span class="cart-count-badge" id="cartCount">0</span>
         </button>
     </header>
 
@@ -51,19 +60,17 @@
     <div class="overlay"></div>
 
 
-    
 
-    <footer class="site-footer">
+
+    <!-- Footer -->
+    <footer class="site-footer container">
         <div class="footer-top">
-
             <div class="footer-column about">
                 <h3>ProFans</h3>
                 <p>
-                    The advantage of hiring a workspace with us is that gives you comfortable
-                    service and all-around facilities.
-                </p>
+                    We offer premium fans that provide you with comfortable cooling and
+                    modern style.
             </div>
-
             <div class="footer-column links">
                 <h4>Pages</h4>
                 <ul>
@@ -72,7 +79,6 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
-
             <div class="footer-column links">
                 <h4>Our Fans</h4>
                 <ul>
@@ -81,21 +87,22 @@
                     <li><a href="products.html">Special fans</a></li>
                 </ul>
             </div>
-
-            <div class="footer-column social">
+            <div class="footer-column links">
                 <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
-                            class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                    <a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                    <a href="https://www.instagram.com/onlyfans_jena/"><i
-                            class="fab fa-instagram"></i><span>Instagram</span></a>
-                </div>
+                <ul>
+                    <li><a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
+                                class="fab fa-facebook-f"></i><span> Facebook</span></a></li>
+                    <li><a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span> Twitter</span></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/onlyfans_jena/"><i class="fab fa-instagram"></i><span>
+                                Instagram</span></a></li>
+                </ul>
             </div>
         </div>
     </footer>
-    
+
     <script src="js/shoppingCart.js"></script>
+    <script src="js/scrollLogicHeader.js"></script>
 </body>
 
 </html>

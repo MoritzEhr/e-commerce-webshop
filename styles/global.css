@@ -378,6 +378,13 @@ body {
 }
 
 
+.container {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
 
 /* --- Responsive Styles --- */
 /* Breakpoint: tablets and below */
@@ -424,7 +431,7 @@ body {
 
   .nav-open .cart-button {
     color: var(--color-black);
- 
+
   }
 
   .cart-panel {
@@ -451,7 +458,7 @@ body {
     padding: 0.75rem 0.5rem;
   }
 
- .cart-button {
+  .cart-button {
     display: none;
   }
 
@@ -464,7 +471,7 @@ body {
     margin-left: auto;
     font-size: 1.5rem;
     padding: 0.5rem 0.75rem;
-    
+
   }
 
   .cart-panel {
@@ -511,6 +518,7 @@ body {
   .cart-button {
     display: none;
   }
+
   .nav-open .nav-links {
     padding: 0.5rem;
     gap: 0.5rem;
@@ -568,7 +576,7 @@ img,
   border: none;
   cursor: pointer;
   font-size: 2rem;
-  color: var(--color-white);
+  color: var(--color-black);
   position: absolute;
   right: 2rem;
   top: 1.5rem;
@@ -612,10 +620,12 @@ img,
     font-size: 2.2rem;
   }
 }
+
 /* Show mobile cart link only when nav is open */
 .mobile-cart-link {
   display: none;
 }
+
 .nav-open .mobile-cart-link {
   display: flex !important;
   align-items: center;
@@ -646,4 +656,154 @@ img,
   font-weight: bold;
   text-align: center;
   line-height: 1;
+}
+
+/* CSS Animations */
+/* ===== FOOTER ANIMATIONS ===== */
+
+.site-footer {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.footer-column a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-column a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover::after {
+  width: 100%;
+}
+
+.footer-column a:hover {
+  color: var(--color-primary);
+  transform: translateX(5px);
+}
+
+.footer-column a i {
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover i {
+  transform: scale(1.2);
+}
+
+/* ===== CART PANEL ANIMATIONS ===== */
+
+.cart-panel {
+  transition: all 0.3s ease;
+}
+
+.cart-panel.active {
+  animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.close-cart {
+  transition: all 0.3s ease;
+}
+
+.close-cart:hover {
+  transform: scale(1.2) rotate(90deg);
+  color: var(--color-accent);
+}
+
+
+/* ===== HEADER ANIMATIONS ===== */
+.logo {
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: var(--color-primary);
+}
+
+.nav-links a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Mobile menu animations */
+.nav-toggle {
+  transition: all 0.3s ease;
+}
+
+.nav-toggle .bar {
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active .bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .bar2 {
+  opacity: 0;
+}
+
+.nav-toggle.active .bar3 {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+
+/* ===== UTILITY ANIMATIONS ===== */
+
+.bounce-on-click {
+  animation: bounceIn 0.6s ease;
+}
+
+.shake-on-error {
+  animation: shake 0.5s ease;
+}
+
+.glow-on-focus {
+  animation: glow 2s infinite;
+}
+
+/* Error message styling for checkout */
+.field-error {
+  color: var(--color-accent);
+  font-size: 0.95em;
+  margin-top: 4px;
+  font-weight: 500;
+}
+.input-error {
+  border-color: var(--color-accent) !important;
+  outline: none;
 }

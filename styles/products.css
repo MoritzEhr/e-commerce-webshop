@@ -22,7 +22,7 @@
 
 .search-box button {
     padding: 0.8rem 1.5rem;
-    background: #ff69b4;
+    background: var(--color-primary);
     color: white;
     border: none;
     border-radius: 4px;
@@ -31,7 +31,7 @@
 }
 
 .search-box button:hover {
-    background: #ff1493;
+    background: var(--color-primary);
 }
 
 /* No Results Message Styles */
@@ -106,14 +106,14 @@
     display: block;
     font-size: 1.2rem;
     font-weight: bold;
-    color: #ff69b4;
+    color: var(--color-primary);
     margin-bottom: 1rem;
 }
 
 .add-to-cart {
     width: 100%;
     padding: 0.8rem;
-    background: #ff69b4;
+    background: var(--color-primary);
     color: white;
     border: none;
     border-radius: 4px;
@@ -122,12 +122,31 @@
 }
 
 .add-to-cart:hover {
-    background: #ff1493;
+    background: var(--color-primary);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .product-list {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+}
+@media (max-width: 1024px) {
+
+    .nav-open .nav-links {
+        background: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle .bar {
+        background: var(--color-black);
+    }
+
+    .cart-count-badge {
+        display: none !important;
     }
 }

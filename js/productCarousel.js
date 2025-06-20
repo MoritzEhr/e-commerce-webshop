@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterTabs = document.querySelectorAll(".products__tab");
 
   let scrollAmount = 0;
-  const scrollStep = 300; // anpassen je nach Kartengröße
+  const scrollStep = 300; 
 
-  // Navigation Buttons
+
   prevBtn.addEventListener("click", () => {
     productList.scrollBy({
       left: -scrollStep,

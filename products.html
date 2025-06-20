@@ -11,8 +11,8 @@
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 
-<body>
-    <div id="overlay"></div>
+<body class="products-page">
+   <div id="overlay"></div>
     <div id="header-sentinel"></div>
     <header class="main-header">
         <a class="logo" href="index.html">ProFans</a>
@@ -22,13 +22,17 @@
             <span class="bar bar3"></span>
         </button>
         <nav class="nav-links">
-            <a href="index.html" class="active">Home</a>
-            <a href="products.html">Products</a>
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
             <a href="about.html">About us</a>
             <a href="faq.html">FAQ</a>
-            <a href="shoppingCart.html">Shopping Cart</a>
+            <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display:none">
+                <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="cart-count-badge" id="mobileCartCount">0</span>
+                Cart
+            </a>
         </nav>
-        <button class="cart-button" aria-label="Warenkorb anzeigen">
+        <button class="cart-button" aria-label="Warenkorb anzeigen" id="headerCartButton">
             <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
             <span class="cart-count-badge" id="cartCount">0</span>
         </button>
@@ -62,7 +66,7 @@
 
         <ul class="product-list">
             <li class="product-item">
-                <img src="images/Main_Fan.png" alt="ProFan 2000">
+                <img src="images/fan-paceholder.png" alt="ProFan 2000">
                 <div class="product-info">
                     <h3>ProFan 2000</h3>
                     <p>High-performance desk fan with 3 speed settings</p>
@@ -74,7 +78,7 @@
                 </div>
             </li>
             <li class="product-item">
-                <img src="images/Main_Fan2.png" alt="ProFan 3000">
+                <img src="images/fan-paceholder.png" alt="ProFan 3000">
                 <div class="product-info">
                     <h3>ProFan 3000</h3>
                     <p>Premium tower fan with remote control</p>
@@ -86,7 +90,7 @@
                 </div>
             </li>
             <li class="product-item">
-                <img src="images/Main_Fan3.png" alt="ProFan Mini">
+                <img src="images/fan-paceholder.png" alt="ProFan Mini">
                 <div class="product-info">
                     <h3>ProFan Mini</h3>
                     <p>Compact USB fan for your desk</p>
@@ -98,7 +102,7 @@
                 </div>
             </li>
             <li class="product-item">
-                <img src="images/Main_Fan.png" alt="ProFan Industrial">
+                <img src="images/fan-paceholder.png" alt="ProFan Industrial">
                 <div class="product-info">
                     <h3>ProFan Industrial</h3>
                     <p>Heavy-duty industrial fan for large spaces</p>
@@ -112,17 +116,15 @@
         </ul>
     </main>
 
-    <footer class="site-footer">
+     <!-- Footer -->
+     <footer class="site-footer container">
         <div class="footer-top">
-
             <div class="footer-column about">
                 <h3>ProFans</h3>
                 <p>
-                    The advantage of hiring a workspace with us is that gives you comfortable
-                    service and all-around facilities.
-                </p>
+                    We offer premium fans that provide you with comfortable cooling and
+                    modern style.
             </div>
-
             <div class="footer-column links">
                 <h4>Pages</h4>
                 <ul>
@@ -131,7 +133,6 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
-
             <div class="footer-column links">
                 <h4>Our Fans</h4>
                 <ul>
@@ -140,23 +141,24 @@
                     <li><a href="products.html">Special fans</a></li>
                 </ul>
             </div>
-
-            <div class="footer-column social">
+            <div class="footer-column links">
                 <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
-                            class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                    <a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                    <a href="https://www.instagram.com/onlyfans_jena/"><i
-                            class="fab fa-instagram"></i><span>Instagram</span></a>
-                </div>
+                <ul>
+                    <li><a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
+                                class="fab fa-facebook-f"></i><span> Facebook</span></a></li>
+                    <li><a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span> Twitter</span></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/onlyfans_jena/"><i class="fab fa-instagram"></i><span>
+                                Instagram</span></a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
+
     <script src="js/shoppingCart.js"></script>
     <script src="js/searchBar.js"></script>
-    <script src="js/homeSearchBar"></script>
+    <script src="js/scrollLogicHeader.js"></script>
 </body>
 
 </html>

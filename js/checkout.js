@@ -46,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function showOrderConfirmation() {
-        // Create and show success message
         const successMessage = document.createElement("div");
         successMessage.className = "order-success";
         successMessage.innerHTML = `
@@ -58,20 +57,16 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-        // Clear the checkout section and show success message
         checkoutSection.innerHTML = "";
         checkoutSection.appendChild(successMessage);
 
-        // Clear the cart
         localStorage.removeItem("cartItems");
 
-        // Update cart count and panel
         const cartCount = document.getElementById("cartCount");
         if (cartCount) {
             cartCount.style.display = "none";
         }
 
-        // Update cart panel if it exists
         const cartContent = document.querySelector(".cart-content");
         if (cartContent) {
             cartContent.innerHTML = "<p>Your cart is currently empty.</p>";
@@ -83,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Check if we should activate personal info section
     const activeSection = localStorage.getItem('activeCheckoutSection');
     if (activeSection === 'personal-info') {
         showSection(personalSection);
@@ -102,8 +96,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     nextToCheckout.addEventListener("click", function () {
-        showSection(checkoutSection);
-        setActiveStep("checkout");
+        if (validatePersonalInfo()) {
+            showSection(checkoutSection);
+            setActiveStep("checkout");
+        }
     });
 
     backToPersonal.addEventListener("click", function () {
@@ -113,20 +109,106 @@ document.addEventListener("DOMContentLoaded", function () {
 
     placeOrder.addEventListener("click", function (e) {
         e.preventDefault();
-        if (paymentForm.checkValidity()) {
+        if (validatePayment()) {
             showOrderConfirmation();
         } else {
             paymentForm.reportValidity();
         }
     });
 
-    // Initialize button state on page load
     updateNextToPersonalButton();
 
-    // Optional: Listen for storage changes to update button state dynamically
     window.addEventListener("storage", function(e) {
         if (e.key === "cartItems") {
             updateNextToPersonalButton();
         }
+    });
+
+    function showFieldError(input, message) {
+        let error = input.parentElement.querySelector('.field-error');
+        if (!error) {
+            error = document.createElement('div');
+            error.className = 'field-error';
+            input.parentElement.appendChild(error);
+        }
+        error.textContent = message;
+        input.classList.add('input-error');
+    }
+    function clearFieldError(input) {
+        let error = input.parentElement.querySelector('.field-error');
+        if (error) error.remove();
+        input.classList.remove('input-error');
+    }
+
+    function validatePersonalInfo() {
+        let valid = true;
+        const form = personalForm;
+        Array.from(form.elements).forEach(input => {
+            if (input.tagName === 'BUTTON') return;
+            clearFieldError(input);
+            if (!input.checkValidity() || (input.type === 'select-one' && !input.value)) {
+                let msg = '';
+                if (!input.value) {
+                    msg = 'This field is required.';
+                } else if (input.type === 'email') {
+                    msg = 'Please enter a valid email address.';
+                } else if (input.type === 'tel') {
+                    msg = 'Please enter a valid phone number.';
+                } else {
+                    msg = input.validationMessage || 'Please fill out this field.';
+                }
+                showFieldError(input, msg);
+                valid = false;
+            }
+        });
+        return valid;
+    }
+
+    function validatePayment() {
+        let valid = true;
+        const form = paymentForm;
+        Array.from(form.elements).forEach(input => {
+            if (input.tagName === 'BUTTON') return;
+            clearFieldError(input);
+            if (!input.checkValidity()) {
+                let msg = '';
+                if (!input.value) {
+                    msg = 'This field is required.';
+                } else if (input.name === 'cardNumber') {
+                    msg = 'Please enter a valid card number.';
+                } else if (input.name === 'expiryDate') {
+                    msg = 'Please use the format MM/YY.';
+                } else if (input.name === 'cvv') {
+                    msg = 'Please enter a valid CVV (3 or 4 digits).';
+                } else {
+                    msg = input.validationMessage || 'Please fill out this field.';
+                }
+                showFieldError(input, msg);
+                valid = false;
+            }
+        });     
+        const cardNumber = form.cardNumber;
+        if (cardNumber && cardNumber.value.replace(/\s+/g, '').length < 13) {
+            showFieldError(cardNumber, 'Card number seems too short');
+            valid = false;
+        }
+        const expiry = form.expiryDate;
+        if (expiry && !/^\d{2}\/\d{2}$/.test(expiry.value)) {
+            showFieldError(expiry, 'Please use the format MM/YY.');
+            valid = false;
+        }
+        const cvv = form.cvv;
+        if (cvv && !/^\d{3,4}$/.test(cvv.value)) {
+            showFieldError(cvv, 'Please enter a valid CVV (3 or 4 digits).');
+            valid = false;
+        }
+        return valid;
+    }
+
+    [personalForm, paymentForm].forEach(form => {
+        if (!form) return;
+        form.addEventListener('input', function(e) {
+            clearFieldError(e.target);
+        });
     });
 });

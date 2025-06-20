@@ -1,5 +1,26 @@
-.main-header{
+.main-header {
     color: var(--color-black);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    ;
     position: relative;
+}
+
+@media (max-width: 1024px) {
+
+    .nav-open .nav-links {
+        background: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle .bar {
+        background: var(--color-black);
+    }
+
+    .cart-count-badge {
+        display: none !important;
+    }
 }

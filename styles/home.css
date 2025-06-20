@@ -2,20 +2,34 @@ body {
   overflow-x: hidden;
 }
 
-img, .container, .container-wrapper, .products__list, .product-card, .footer-top, .footer-bottom, .hero, .image-wrapper, .image, .small, .large {
+img,
+.container,
+.container-wrapper,
+.products__list,
+.product-card,
+.footer-top,
+.footer-bottom,
+.hero,
+.image-wrapper,
+.image,
+.small,
+.large {
   max-width: 100%;
   box-sizing: border-box;
 }
 
 /* Ensure all buttons are easily tappable on mobile */
-button, .btn, .products__arrow, .product-card__add, .search-box button {
+button,
+.btn,
+.products__arrow,
+.product-card__add,
+.search-box button {
   min-height: 44px;
   min-width: 44px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
 }
 
-/* Responsive improvements */
 @media (max-width: 1024px) {
   .main-header {
     flex-direction: column;
@@ -23,7 +37,7 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
     gap: 1rem;
     padding: 1rem 1rem;
   }
-  /* TODO: Add hamburger menu for mobile navigation if not implemented */
+
 }
 
 @media (max-width: 768px) {
@@ -33,20 +47,26 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
     gap: 1rem;
     padding: 0.75rem 0.5rem;
   }
+
   .hero {
     padding-top: 6rem;
   }
+
   .hero-content h1 {
     font-size: 2rem;
   }
+
   .products__title {
     font-size: 1.7rem;
   }
+
   .container {
     flex-direction: column-reverse;
     padding: 0 0.5rem;
   }
-  .btn, .search-box button {
+
+  .btn,
+  .search-box button {
     font-size: 0.95rem;
     padding: 0.75rem 0.5rem;
   }
@@ -56,22 +76,29 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
   .main-header {
     padding: 0.5rem;
   }
+
   .hero-content h1 {
     font-size: 1.3rem;
   }
+
   .products__title {
     font-size: 1.2rem;
   }
+
   .search-box {
     max-width: 100%;
     margin: 1rem;
     border-radius: 30px;
   }
-  .btn, .search-box button {
+
+  .btn,
+  .search-box button {
     font-size: 0.9rem;
     padding: 0.5rem 0.25rem;
   }
-  .footer-top, .footer-bottom {
+
+  .footer-top,
+  .footer-bottom {
     flex-direction: column;
     text-align: center;
     gap: 10px;
@@ -100,7 +127,6 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
   }
 }
 
-
 .main-header {
   position: absolute;
   color: var(--color-white)
@@ -124,7 +150,6 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
   height: 80px;
   margin-bottom: -80px;
 }
-
 
 /* Hero Section */
 .hero {
@@ -163,7 +188,7 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
 .search-box {
   display: flex;
   margin-top: 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   border-radius: 50px;
   overflow: hidden;
   width: 100%;
@@ -795,4 +820,338 @@ button, .btn, .products__arrow, .product-card__add, .search-box button {
   .products__title {
     font-size: 1.8rem;
   }
+}
+
+
+/*CSS Animations*/
+
+
+/* ===== KEYFRAME ANIMATIONS ===== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  70% {
+    transform: scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-2px);
+  }
+
+  75% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 10px rgba(var(--color-primary), 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 20px rgba(var(--color-primary), 0.6), 0 0 30px rgba(var(--color-primary), 0.4);
+  }
+}
+
+/* ===== HEADER ANIMATIONS ===== */
+.logo {
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  color: var(--color-primary);
+}
+
+.nav-links a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Mobile menu animations */
+.nav-toggle {
+  transition: all 0.3s ease;
+}
+
+.nav-toggle .bar {
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active .bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active .bar2 {
+  opacity: 0;
+}
+
+.nav-toggle.active .bar3 {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ===== HERO SECTION ANIMATIONS ===== */
+
+.hero-content {
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.hero-content h1 {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-content p {
+  animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.search-box {
+  animation: fadeInUp 1s ease-out 1.2s both;
+  transition: all 0.3s ease;
+}
+
+.search-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.search-box input {
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  transform: scale(1.02);
+  animation: glow 2s infinite;
+}
+
+.search-box button {
+  transition: all 0.3s ease;
+}
+
+.search-box button:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.1);
+}
+
+/* ===== MATERIALS SECTION ANIMATIONS ===== */
+
+.materials-section .text-content {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.materials-section .image-layout {
+  animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+.materials-section .image {
+  transition: all 0.3s ease;
+}
+
+.materials-section .image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== FOOTER ANIMATIONS ===== */
+
+.site-footer {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.footer-column a {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-column a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover::after {
+  width: 100%;
+}
+
+.footer-column a:hover {
+  color: var(--color-primary);
+  transform: translateX(5px);
+}
+
+.footer-column a i {
+  transition: all 0.3s ease;
+}
+
+.footer-column a:hover i {
+  transform: scale(1.2);
+}
+
+/* ===== CART PANEL ANIMATIONS ===== */
+
+.cart-panel {
+  transition: all 0.3s ease;
+}
+
+.cart-panel.active {
+  animation: slideInRight 0.4s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.close-cart {
+  transition: all 0.3s ease;
+}
+
+.close-cart:hover {
+  transform: scale(1.2) rotate(90deg);
+  color: var(--color-accent);
+}
+
+
+/* ===== UTILITY ANIMATIONS ===== */
+
+.bounce-on-click {
+  animation: bounceIn 0.6s ease;
+}
+
+.shake-on-error {
+  animation: shake 0.5s ease;
+}
+
+.glow-on-focus {
+  animation: glow 2s infinite;
 }

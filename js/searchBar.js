@@ -4,13 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.querySelector('.search-box button');
     const productList = document.querySelector('main ul');
     
-    // Check if there's a search parameter in the URL
     function getSearchParameter() {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('search');
     }
     
-    // Set the search input value from URL parameter
     function setSearchFromURL() {
         const searchTerm = getSearchParameter();
         if (searchTerm && searchInput) {
@@ -19,9 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Perform the search functionality
     function performSearch(searchTerm) {
-        // If we're on the home page, redirect to products page
         if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
             if (searchTerm) {
                 window.location.href = `products.html?search=${encodeURIComponent(searchTerm)}`;
@@ -29,13 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // If we're on the products page
         if (productList) {
             const normalizedSearchTerm = searchTerm.toLowerCase();
             const products = productList.getElementsByTagName('li');
             let hasResults = false;
             
-            // Show/hide products based on search term
             Array.from(products).forEach(product => {
                 const productName = product.querySelector('h3').textContent.toLowerCase();
                 if (productName.includes(normalizedSearchTerm)) {
@@ -46,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Show/hide "No results" message
             let noResultsMessage = document.querySelector('.no-results-message');
             if (!hasResults && normalizedSearchTerm !== '') {
                 if (!noResultsMessage) {
@@ -82,12 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Handle search button click
     if (searchButton) {
         searchButton.addEventListener('click', function() {
             const searchTerm = searchInput.value.trim();
             if (searchTerm) {
-                // Update URL with search parameter
                 const newUrl = new URL(window.location);
                 newUrl.searchParams.set('search', searchTerm);
                 window.history.pushState({}, '', newUrl);
@@ -97,20 +88,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add event listener for search input (real-time search)
     if (searchInput) {
         searchInput.addEventListener('input', function(e) {
             const searchTerm = e.target.value.toLowerCase();
             performSearch(searchTerm);
         });
         
-        // Handle Enter key press
         searchInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 const searchTerm = searchInput.value.trim();
                 if (searchTerm) {
-                    // Update URL with search parameter
                     const newUrl = new URL(window.location);
                     newUrl.searchParams.set('search', searchTerm);
                     window.history.pushState({}, '', newUrl);
@@ -121,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Initialize search from URL parameter
     setSearchFromURL();
 });
 

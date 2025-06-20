@@ -8,18 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCount = document.getElementById('cartCount');
     const mobileCartCount = document.getElementById('mobileCartCount');
 
-    // Function to check if we should show/hide the header
     function updateHeaderState() {
         const scrollY = window.proFansScroll ? window.proFansScroll.scrollY : window.pageYOffset;
         const sentinelRect = sentinel.getBoundingClientRect();
         
         if (sentinelRect.top < 0 && !isSticky) {
-            // Sentinel is out of viewport -> activate sticky
             isSticky = true;
             header.classList.add('sticky');
             header.classList.add('show');
         } else if (sentinelRect.top >= 0 && isSticky) {
-            // Sentinel is back in viewport -> deactivate sticky
             header.classList.remove('show');
             
             header.addEventListener('transitionend', function handler() {
@@ -30,13 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Initial check
     updateHeaderState();
 
-    // Update on scroll
     window.addEventListener('scroll', updateHeaderState);
 
-    // Also update when inertial scroll updates
     if (window.proFansScroll) {
         const originalUpdateScrollPosition = window.proFansScroll.updateScrollPosition;
         window.proFansScroll.updateScrollPosition = function() {
@@ -52,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Open cart panel when mobile cart link is clicked
     if (mobileCartLink) {
         mobileCartLink.addEventListener('click', function(e) {
             e.preventDefault();
@@ -66,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Keep cart count in sync
     function syncCartCount() {
         if (cartCount && mobileCartCount) {
             mobileCartCount.textContent = cartCount.textContent;
@@ -77,9 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-    // Initial sync
     syncCartCount();
-    // Observe changes to cartCount
     if (cartCount && mobileCartCount) {
         const observer = new MutationObserver(syncCartCount);
         observer.observe(cartCount, { childList: true, characterData: true, subtree: true, attributes: true });
