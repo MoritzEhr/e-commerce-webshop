@@ -15,16 +15,22 @@
     <div id="overlay"></div>
     <div id="header-sentinel"></div>
     <header class="main-header">
-        <div class="logo">ProFans</div>
+        <a class="logo" href="index.html">ProFans</a>
+        <button class="nav-toggle" aria-label="Menu open/close" aria-expanded="false">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </button>
         <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="products.html" class="active">Products</a>
+            <a href="index.html" class="active">Home</a>
+            <a href="products.html">Products</a>
             <a href="about.html">About us</a>
             <a href="faq.html">FAQ</a>
+            <a href="shoppingCart.html">Shopping Cart</a>
         </nav>
-        <button class="cart-button">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount" class="cart-count-badge">0</span>
+        <button class="cart-button" aria-label="Warenkorb anzeigen">
+            <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+            <span class="cart-count-badge" id="cartCount">0</span>
         </button>
     </header>
 

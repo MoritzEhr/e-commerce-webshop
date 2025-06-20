@@ -216,3 +216,13 @@ closeCart.addEventListener("click", () => {
   cartPanel.classList.remove("open");
   document.body.classList.remove("cart-open"); // Overlay entfernen
 });
+
+// Handle checkout button click
+document.querySelectorAll('.checkout-button').forEach(button => {
+    button.addEventListener('click', () => {
+        // Store the active section in localStorage
+        localStorage.setItem('activeCheckoutSection', 'personal-info');
+        // Redirect to shopping cart page
+        window.location.href = 'shoppingCart.html';
+    });
+});

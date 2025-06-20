@@ -83,12 +83,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Check if we should activate personal info section
+    const activeSection = localStorage.getItem('activeCheckoutSection');
+    if (activeSection === 'personal-info') {
+        showSection(personalSection);
+        setActiveStep('personal');
+        localStorage.removeItem('activeCheckoutSection');
+    }
+
     nextToPersonal.addEventListener("click", function () {
-        // Only proceed if cart is not empty and button is not disabled
-        if (!isCartEmpty() && !nextToPersonal.disabled) {
-            showSection(personalSection);
-            setActiveStep("personal");
-        }
+        showSection(personalSection);
+        setActiveStep("personal");
     });
 
     backToCart.addEventListener("click", function () {
@@ -97,12 +102,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     nextToCheckout.addEventListener("click", function () {
-        if (personalForm.checkValidity()) {
-            showSection(checkoutSection);
-            setActiveStep("checkout");
-        } else {
-            personalForm.reportValidity(); // Shows user what's missing
-        }
+        showSection(checkoutSection);
+        setActiveStep("checkout");
     });
 
     backToPersonal.addEventListener("click", function () {

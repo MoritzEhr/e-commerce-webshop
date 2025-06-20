@@ -16,15 +16,25 @@
     <div id="header-sentinel"></div>
     <header class="main-header">
         <a class="logo" href="index.html">ProFans</a>
+        <button class="nav-toggle" aria-label="Menu open/close" aria-expanded="false">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </button>
         <nav class="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="products.html">Products</a>
             <a href="about.html">About us</a>
             <a href="faq.html">FAQ</a>
+            <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display:none">
+                <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="cart-count-badge" id="mobileCartCount">0</span>
+                Cart
+            </a>
         </nav>
-        <button class="cart-button">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount" class="cart-count-badge">0</span>
+        <button class="cart-button" aria-label="Warenkorb anzeigen" id="headerCartButton">
+            <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+            <span class="cart-count-badge" id="cartCount">0</span>
         </button>
     </header>
 
@@ -63,49 +73,7 @@
         </div>
     </section>
 
-    <!-- Why Us Section -->
-    <section class="why">
-        <div class="container-wrapper">
-            <div class="why__inner">
-                <div class="why__intro">
-                    <h2 class="why__title">
-                        Why<br>Choosing Us
-                    </h2>
-                </div>
-                <div class="why__features">
-                    <article class="feature">
-                        <h3 class="feature__title">Premium Quality</h3>
-                        <p class="feature__desc">
-                            All of our fans are made with premium quality materials that will last a long time.
-                        </p>
-                        <a href="#" class="btn">
-                            More Info <span class="arrow">→</span>
-                        </a>
-                    </article>
-                    <article class="feature">
-                        <h3 class="feature__title">Energy Efficiency</h3>
-                        <p class="feature__desc">
-                            We provide many energy efficient fan options to help you save money on your electricity
-                            bill.
-                        </p>
-                        <a href="#" class="btn">
-                            More Info <span class="arrow">→</span>
-                        </a>
-                    </article>
-                    <article class="feature">
-                        <h3 class="feature__title">Variety of Choices</h3>
-                        <p class="feature__desc">
-                            We have a big variety of fan options to fit your needs. From small fans for small spaces to
-                            big fans for big spaces.
-                        </p>
-                        <a href="#" class="btn">
-                            More Info <span class="arrow">→</span>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Products Section -->
     <section class="products" aria-label="Best Selling Products">
@@ -133,7 +101,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">149€</span>
                                 <button class="product-card__add" data-name="First Fan" data-price="149.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -152,7 +120,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">129 €</span>
                                 <button class="product-card__add" data-name="Second Fan" data-price="129.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -171,7 +139,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">129€</span>
                                 <button class="product-card__add" data-name="Third Fan" data-price="129.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -190,7 +158,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">149€</span>
                                 <button class="product-card__add" data-name="Fourth Fan" data-price="149.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -209,7 +177,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">189€</span>
                                 <button class="product-card__add" data-name="Fifth Fan" data-price="189.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -228,7 +196,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">149€</span>
                                 <button class="product-card__add" data-name="Normal Fan" data-price="149.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -247,7 +215,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">149€</span>
                                 <button class="product-card__add" data-name="Seventh Fan" data-price="149.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -266,7 +234,7 @@
                             <div class="product-card__footer">
                                 <span class="product-card__price">392€</span>
                                 <button class="product-card__add" data-name="Eighth Fan" data-price="392.00"
-                                    data-image="images/Main_Fan2.png">+</button>
+                                    data-image="images/fan-paceholder.png">+</button>
                             </div>
                         </div>
                     </article>
@@ -295,7 +263,7 @@
                 <span class="subtitle">EXPERIENCES</span>
                 <h2>We Provide You The<br>Best Experience</h2>
                 <p>
-                    You don’t have to worry about the result because all of these interiors are made by
+                    You don't have to worry about the result because all of these interiors are made by
                     people who are professionals in their fields with an elegant and luxurious style and
                     with premium quality materials.
                 </p>
@@ -345,8 +313,8 @@
                 <h3>Jonas</h3>
                 <p class="role">Jonas Pfeffermann</p>
                 <blockquote>
-                    “Absolutely thrilled with my new fan from ProFans! It's whisper-quiet, incredibly stylish, and
-                    keeps my workspace perfectly cool.”
+                    "Absolutely thrilled with my new fan from ProFans! It's whisper-quiet, incredibly stylish, and
+                    keeps my workspace perfectly cool."
                 </blockquote>
                 <div class="stars">
                     <span class="star">★</span>
@@ -362,8 +330,8 @@
                 <h3>Beggi</h3>
                 <p class="role">Beggi Becks</p>
                 <blockquote>
-                    “ProFans offers fans that are not just functional but truly beautiful pieces of design. They blend
-                    seamlessly into modern interiors while providing powerful, quiet cooling.”
+                    "ProFans offers fans that are not just functional but truly beautiful pieces of design. They blend
+                    seamlessly into modern interiors while providing powerful, quiet cooling."
                 </blockquote>
                 <div class="stars">
                     <span class="star">★</span>
@@ -379,9 +347,9 @@
                 <h3>Jakob</h3>
                 <p class="role">Jakob Brille</p>
                 <blockquote>
-                    “ProFans redefines what a fan can be: combining high performance with sleek, minimalist design.
+                    "ProFans redefines what a fan can be: combining high performance with sleek, minimalist design.
                     It's
-                    more than just a cooling device - it's a statement.”
+                    more than just a cooling device - it's a statement."
                 </blockquote>
                 <div class="stars">
                     <span class="star">★</span>
@@ -395,17 +363,14 @@
     </div>
 
     <!-- Footer -->
-    <footer class="site-footer">
+    <footer class="site-footer container">
         <div class="footer-top">
-
             <div class="footer-column about">
                 <h3>ProFans</h3>
                 <p>
-                    The advantage of hiring a workspace with us is that gives you comfortable
-                    service and all-around facilities.
-                </p>
+                    We offer premium fans that provide you with comfortable cooling and
+                    modern style.
             </div>
-
             <div class="footer-column links">
                 <h4>Pages</h4>
                 <ul>
@@ -414,7 +379,6 @@
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
-
             <div class="footer-column links">
                 <h4>Our Fans</h4>
                 <ul>
@@ -423,16 +387,16 @@
                     <li><a href="products.html">Special fans</a></li>
                 </ul>
             </div>
-
-            <div class="footer-column social">
+            <div class="footer-column links">
                 <h4>Follow Us</h4>
-                <div class="social-links">
-                    <a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
-                            class="fab fa-facebook-f"></i><span>Facebook</span></a>
-                    <a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span>Twitter</span></a>
-                    <a href="https://www.instagram.com/onlyfans_jena/"><i
-                            class="fab fa-instagram"></i><span>Instagram</span></a>
-                </div>
+                <ul>
+                    <li><a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
+                                class="fab fa-facebook-f"></i><span> Facebook</span></a></li>
+                    <li><a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span> Twitter</span></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/onlyfans_jena/"><i class="fab fa-instagram"></i><span>
+                                Instagram</span></a></li>
+                </ul>
             </div>
         </div>
     </footer>

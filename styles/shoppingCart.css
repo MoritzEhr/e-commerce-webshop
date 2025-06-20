@@ -501,3 +501,110 @@ button.disabled {
     background-color: var(--color-accent);
     transform: translateY(-2px);
 }
+
+/* ── Large Devices (bis 1200px) ── */
+@media (max-width: 1200px) {
+  .cart-container {
+    padding: 1.5rem;
+  }
+  .checkout-timeline {
+    grid-template-columns: repeat(4, auto);
+    max-width: 100%;
+    padding-top: 4rem;
+  }
+}
+
+/* ── Medium Devices (bis 992px) ── */
+@media (max-width: 992px) {
+  .cart-item {
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .cart-item img {
+    width: 80px;
+    height: 80px;
+  }
+  .cart-item-title {
+    font-size: 1.1rem;
+  }
+  .cart-item-price {
+    font-size: 1.2rem;
+  }
+  .checkout-timeline {
+    grid-template-columns: repeat(3, auto);
+    gap: 1rem;
+  }
+  .timeline-connector {
+    width: 60px;
+    margin: 0 0.5rem;
+  }
+}
+
+/* ── Tablet (bis 768px) ── */
+@media (max-width: 768px) {
+  /* schon vorhanden – hier zur Vollständigkeit */
+  .cart-container {
+    padding: 1rem;
+  }
+  .cart-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .cart-item img {
+    width: 100%;
+    height: 100px;
+  }
+  .cart-item-quantity {
+    justify-content: center;
+  }
+  .back-button,
+  .submit-button,
+  .next-button,
+  .checkout-button {
+    width: 100%;
+  }
+  .personal-info-form {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    flex-direction: column;
+  }
+  .checkout-timeline {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 1rem;
+  }
+  .timeline-connector {
+    display: none;
+  }
+}
+
+/* ── Mobile (bis 576px) ── */
+@media (max-width: 576px) {
+  .cart-container h1 {
+    font-size: 2rem;
+  }
+  .cart-item-title {
+    font-size: 1rem;
+  }
+  .cart-item-price {
+    font-size: 1.1rem;
+  }
+  .cart-item-quantity button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  .timeline-step .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+  .step-label {
+    font-size: 0.9rem;
+  }
+  .navigation-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
