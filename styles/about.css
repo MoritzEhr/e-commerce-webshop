@@ -1,7 +1,6 @@
 .main-header {
     color: var(--color-black);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    ;
     position: relative;
 }
 
@@ -23,4 +22,83 @@
     .cart-count-badge {
         display: none !important;
     }
+}
+
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    margin-top: 30px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.main-text {
+    padding: 0 10px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.accordion {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: var(--color-shade1);
+    color: var(--color-bal);
+    padding: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    transition: all 0.3s ease;
+    border-top: 1px solid var(--color-primary);
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-item ul {
+    margin-left: 40px;
+}
+
+.accordion-header::before {
+    content: "+";
+    margin-right: 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+}
+
+.accordion-item.active .accordion-header::before {
+    content: "-";
+}
+
+.data-section {
+    padding: 20px;
+    background-color: var(--color-shade1);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.data-section h2 {
+    font-size: larger;
 }

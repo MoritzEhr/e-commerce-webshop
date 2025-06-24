@@ -160,7 +160,7 @@ button,
   justify-content: center;
   text-align: center;
   position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../images/main_test9.jpeg') no-repeat center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../images/hero.jpeg') no-repeat center/cover;
   background-attachment: scroll;
 }
 

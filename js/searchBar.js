@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.querySelector('.search-box input');
     const searchButton = document.querySelector('.search-box button');
-    const productList = document.querySelector('main ul');
+    const productList = document.querySelector('.products__grid');
     
     function getSearchParameter() {
         const urlParams = new URLSearchParams(window.location.search);
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (productList) {
             const normalizedSearchTerm = searchTerm.toLowerCase();
-            const products = productList.getElementsByTagName('li');
+            const products = productList.getElementsByClassName('product-card');
             let hasResults = false;
             
             Array.from(products).forEach(product => {

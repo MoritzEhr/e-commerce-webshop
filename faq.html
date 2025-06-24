@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProFans - Online Shop</title>
+    <title>ProFans - FAQ</title>
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/faq.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -22,10 +22,10 @@
             <span class="bar bar3"></span>
         </button>
         <nav class="nav-links">
-            <a href="index.html"">Home</a>
-            <a href="products.html">Products</a>
+            <a href="index.html">Home</a>
+            <a href=" products.html">Products</a>
             <a href="about.html">About us</a>
-            <a href="faq.html"  class="active">FAQ</a>
+            <a href="faq.html" class="active">FAQ</a>
             <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display:none">
                 <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
                 <span class="cart-count-badge" id="mobileCartCount">0</span>
@@ -57,9 +57,85 @@
         </div>
     </aside>
 
-    <div class="overlay"></div>
 
+    <div class="faq">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-item">
+            <div class="faq-question">Which type of fan is right for me?</div>
+            <div class="faq-answer">That depends on the room size and how you plan to use it.
+                For small spaces, table or pedestal fans are ideal. For larger rooms, tower or ceiling fans work
+                better. If you're looking for targeted cooling, choose a model with oscillation and multiple speed
+                settings.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What’s the difference between a tower fan and a pedestal fan?</div>
+            <div class="faq-answer">Tower fans are space-saving, quieter, and usually feature a modern design with
+                extras like remote control or timers. Pedestal fans are generally more powerful, height-adjustable,
+                and can be positioned more flexibly in a room.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How loud are your fans?</div>
+            <div class="faq-answer">Noise levels vary by model and speed setting. Our quietest models operate below
+                40 dB – about the sound level of a whisper. For bedrooms, we recommend models with a "silent" or
+                "sleep" mode.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do your fans come with remote controls or smart features?</div>
+            <div class="faq-answer">Many of our models include remote controls, timers, and even app-based
+                controls via Wi-Fi or Bluetooth. You can check each product’s specifications for available
+                features.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How do I clean my fan?</div>
+            <div class="faq-answer">Always unplug the fan first. Wipe the outer surfaces with a soft, damp
+                cloth. For pedestal or table fans with protective grills, you can gently remove the cover to
+                clean the blades. Regular cleaning improves both hygiene and performance.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How energy-efficient are your fans?</div>
+            <div class="faq-answer">Our fans are much more energy-efficient than air conditioners. Most models
+                use between 30–60 watts per hour. Some also include energy-saving modes for even lower
+                consumption.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do your fans come with a warranty?</div>
+            <div class="faq-answer">Yes, all our fans include a standard 2-year warranty. Some models offer
+                extended manufacturer warranties – check the product details or contact our support team for
+                more information.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What should I do if my fan is defective?</div>
+            <div class="faq-answer">Please reach out to our customer service. We’ll assist you promptly –
+                whether it's a repair, exchange, or return. Having your invoice or order number ready will speed
+                up the process.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Do you offer replacement parts?</div>
+            <div class="faq-answer">Yes, we stock common replacement parts such as fan blades, grills, remote
+                controls, and bases. Just send us a message with your model number and we’ll help you find what
+                you need.
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I use my fan in the winter too?</div>
+            <div class="faq-answer">Absolutely. Some fans have a reverse function that helps circulate warm air
+                from heaters more efficiently. This can actually reduce heating costs in colder months.</div>
+        </div>
 
+        <script>
+            const questions = document.querySelectorAll('.faq-question');
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    question.classList.toggle('open');
+                    const answer = question.nextElementSibling;
+                    answer.classList.toggle('show');
+                });
+            });
+        </script>
+
+    </div>
 
 
     <!-- Footer -->
@@ -92,7 +168,8 @@
                 <ul>
                     <li><a href="https://www.facebook.com/people/Onlyfans/61576991134328/"><i
                                 class="fab fa-facebook-f"></i><span> Facebook</span></a></li>
-                    <li><a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span> Twitter</span></a>
+                    <li><a href="https://x.com/Onlyfans_jena"><i class="fab fa-twitter"></i><span>
+                                Twitter</span></a>
                     </li>
                     <li><a href="https://www.instagram.com/onlyfans_jena/"><i class="fab fa-instagram"></i><span>
                                 Instagram</span></a></li>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProFans - Online Shop</title>
+    <title>ProFans - About Us</title>
     <link rel="stylesheet" href="styles/global.css" />
     <link rel="stylesheet" href="styles/about.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -57,6 +57,126 @@
         </div>
     </aside>
 
+    <!-- Main Content -->
+    <div class="main-container">
+        <h1>About Us</h1>
+        <div class="main-text">
+            <p>OnlyFans was founded with a clear and simple purpose:
+                To provide high-quality ventilation products without the noise — both literally and
+                figuratively.<br><br>
+                In 2020, we noticed a gap in the market. While general electronics retailers carried fans, they were
+                often treated as an afterthought: limited selection, questionable build quality, and little product
+                expertise. That’s when we decided to create a focused, reliable alternative.<br><br>
+                At OnlyFans, we specialize — and we believe there’s strength in that.
+                By concentrating solely on fans, we’re able to offer a carefully curated range of products, backed
+                by industry knowledge and real customer support.<br><br>
+                We serve both residential and commercial clients who value comfort, efficiency, and long-term
+                reliability. Whether it’s a whisper-quiet desk fan for your home office or a high-performance ceiling
+                fan for
+                larger spaces, we make it easier to find the right fit — and deliver it fast.<br><br>
+                Our team combines product engineers, customer service professionals, and logistics experts, all
+                aligned around one goal:<br>
+                Better air, made simple.<br><br>
+                <i>We don’t just sell fans. We stand behind them!</i>
+        </div>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header"> Mission & Values</div>
+                <div class="accordion-content">At OnlyFans, we believe comfort should be effortless.<br>
+                    <br>
+                    Our mission is to make climate control simple, effective, and accessible — without compromising
+                    on
+                    quality,
+                    design, or support. We focus entirely on fans, because we believe in doing one thing
+                    exceptionally
+                    well.<br>
+                    <br>
+                    Our values guide every decision we make:<br>
+                    <br>
+                    <ul>
+                        <li>Reliability – We stock only tested, high-performance products built to last.</li>
+                        <li>Clarity – No confusing jargon, no upselling — just honest guidance.</li>
+                        <li>Customer-first thinking – We listen, we support, and we follow through.</li>
+                        <li>Sustainability – We prioritize energy-efficient models and responsible logistics.</li>
+                    </ul>
+                    <br>
+                    Our goal isn’t just to sell fans. It’s to be the most trusted name in residential and commercial
+                    ventilation.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">What Makes Us Different</div>
+                <div class="accordion-content">We’re not a generic tech warehouse. We don’t sell phones, blenders, or
+                    microwaves.<br><br>
+                    We sell fans. That’s it — and that focus makes all the difference.<br>
+                    <br>
+                    While larger retailers offer broad selection with minimal product knowledge, we do the opposite.
+                    At
+                    OnlyFans, we offer a refined range of fan models chosen for performance, durability, and design
+                    — and we actually know how they work.<br>
+                    <br>
+                    Here’s what sets us apart:<br>
+                    <ul>
+                        <li>Narrow focus, deep knowledge – Every product is vetted by our team.</li>
+                        <li>Real support – Questions are answered by specialists, not scripts.</li>
+                        <li>No drop-shipping – Our inventory is stored, handled, and shipped directly by us.</li>
+                        <li>Transparent information – Accurate specs, honest comparisons, and clear use cases.</li>
+                    </ul>
+                    <br>
+                    This isn’t a side category for us. This is the business.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Behind the Scenes</div>
+                <div class="accordion-content">What you see in the store is the result of a lot that happens behind
+                    the scenes.<br>
+                    <br>
+                    Our selection process starts with technical benchmarks — airflow performance, decibel levels,
+                    energy use, build quality — and ends with hands-on testing in real-world conditions. If it doesn’t
+                    meet our
+                    standards, we don’t sell it.<br>
+                    <br>
+                    We also take pride in fast, careful fulfillment. Orders are packed at our own facility to reduce
+                    damage, delays, and surprises. And when something goes wrong, we don’t hide behind ticket systems or
+                    long response times — we solve it.<br>
+                    <br>
+                    We invest in doing things properly — from supplier partnerships to packaging design — because
+                    details matter.
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">Why We're the Best</div>
+                <div class="accordion-content">“Best” is a big word. We don’t use it lightly.<br>
+                    <br>
+                    At OnlyFans, we believe we offer the best online shopping experience for ventilation products
+                    because we’ve built the business with focus and intent.<br>
+                    <br>
+                    We’re experts, not generalists.<br>
+                    <br>
+                    We carry fewer products, but better ones.<br>
+                    <br>
+                    We offer support you can actually rely on.<br>
+                    <br>
+                    We ship faster and more consistently than drop-ship competitors.<br>
+                    <br>
+                    We're not the cheapest, and we don’t try to be.<br>
+                    We're here for customers who want the right product the first time, and a team they can trust
+                    behind
+                    it.
+                </div>
+            </div>
+        </div>
+
+        <div class="data-section">
+            <h2>Contact</h2><br>
+            <p>Carl-Zeiss-Straße 3<br>
+                07743 Jena<br>
+                Germany<br>
+                Tel: +1234567890<br>
+            </p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer container">
@@ -97,6 +217,17 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const headers = document.querySelectorAll('.accordion-header');
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
     <script src="js/shoppingCart.js"></script>
     <script src="js/scrollLogicHeader.js"></script>
 </body>
