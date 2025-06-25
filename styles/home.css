@@ -825,9 +825,6 @@ button,
 
 /*CSS Animations*/
 
-
-/* ===== KEYFRAME ANIMATIONS ===== */
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
