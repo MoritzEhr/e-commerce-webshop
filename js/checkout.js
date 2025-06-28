@@ -1,3 +1,4 @@
+// CHECKOUT
 document.addEventListener("DOMContentLoaded", function () {
     const cartSection = document.getElementById("cart-section");
     const personalSection = document.getElementById("personal-section");
@@ -118,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateNextToPersonalButton();
 
-    window.addEventListener("storage", function(e) {
+    window.addEventListener("storage", function (e) {
         if (e.key === "cartItems") {
             updateNextToPersonalButton();
         }
@@ -134,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         error.textContent = message;
         input.classList.add('input-error');
     }
+
     function clearFieldError(input) {
         let error = input.parentElement.querySelector('.field-error');
         if (error) error.remove();
@@ -186,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 showFieldError(input, msg);
                 valid = false;
             }
-        });     
+        });
         const cardNumber = form.cardNumber;
         if (cardNumber && cardNumber.value.replace(/\s+/g, '').length < 13) {
             showFieldError(cardNumber, 'Card number seems too short');
@@ -207,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     [personalForm, paymentForm].forEach(form => {
         if (!form) return;
-        form.addEventListener('input', function(e) {
+        form.addEventListener('input', function (e) {
             clearFieldError(e.target);
         });
     });

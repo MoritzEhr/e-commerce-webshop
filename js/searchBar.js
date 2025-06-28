@@ -1,14 +1,14 @@
-// Unified search functionality for both home and products pages
-document.addEventListener('DOMContentLoaded', function() {
+// UNIFIED SEARCH FUNCTIONALITY FOR BOTH HOME AND PRODUCTS PAGES
+document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.querySelector('.search-box input');
     const searchButton = document.querySelector('.search-box button');
     const productList = document.querySelector('.products__grid');
-    
+
     function getSearchParameter() {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get('search');
     }
-    
+
     function setSearchFromURL() {
         const searchTerm = getSearchParameter();
         if (searchTerm && searchInput) {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             performSearch(searchTerm);
         }
     }
-    
+
     function performSearch(searchTerm) {
         if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
             if (searchTerm) {
@@ -24,12 +24,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             return;
         }
-        
+
         if (productList) {
             const normalizedSearchTerm = searchTerm.toLowerCase();
             const products = productList.getElementsByClassName('product-card');
             let hasResults = false;
-            
+
             Array.from(products).forEach(product => {
                 const productName = product.querySelector('h3').textContent.toLowerCase();
                 if (productName.includes(normalizedSearchTerm)) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     product.style.display = 'none';
                 }
             });
-            
+
             let noResultsMessage = document.querySelector('.no-results-message');
             if (!hasResults && normalizedSearchTerm !== '') {
                 if (!noResultsMessage) {
@@ -74,27 +74,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     }
-    
+
     if (searchButton) {
-        searchButton.addEventListener('click', function() {
+        searchButton.addEventListener('click', function () {
             const searchTerm = searchInput.value.trim();
             if (searchTerm) {
                 const newUrl = new URL(window.location);
                 newUrl.searchParams.set('search', searchTerm);
                 window.history.pushState({}, '', newUrl);
-                
+
                 performSearch(searchTerm);
             }
         });
     }
-    
+
     if (searchInput) {
-        searchInput.addEventListener('input', function(e) {
+        searchInput.addEventListener('input', function (e) {
             const searchTerm = e.target.value.toLowerCase();
             performSearch(searchTerm);
         });
-        
-        searchInput.addEventListener('keypress', function(e) {
+
+        searchInput.addEventListener('keypress', function (e) {
             if (e.key === 'Enter') {
                 e.preventDefault();
                 const searchTerm = searchInput.value.trim();
@@ -102,13 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const newUrl = new URL(window.location);
                     newUrl.searchParams.set('search', searchTerm);
                     window.history.pushState({}, '', newUrl);
-                    
+
                     performSearch(searchTerm);
                 }
             }
         });
     }
-    
+
     setSearchFromURL();
 });
-

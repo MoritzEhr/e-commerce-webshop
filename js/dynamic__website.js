@@ -1,5 +1,5 @@
-// ===== DYNAMIC LAYOUT MANAGER =====
-document.addEventListener('DOMContentLoaded', function() {
+// DYNAMIC LAYOUT MANAGER
+document.addEventListener('DOMContentLoaded', function () {
   // DOM Elements
   const sidebar = document.querySelector('.products-sidebar');
   const header = document.querySelector('.main-header');
@@ -8,14 +8,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Configurable Values
   const config = {
-    desktopBreakpoint: 1024,    // Minimum width for desktop layout
-    sidebarWidth: 280,         // px
-    sidebarOffset: 32,         // px margin from left
-    headerHeight: 100,         // px (match your header height)
-    animationSpeed: 40         // seconds for full animation cycle
+    desktopBreakpoint: 1024, // Minimum width for desktop layout
+    sidebarWidth: 280,
+    sidebarOffset: 32,
+    headerHeight: 100,
+    animationSpeed: 40
   };
 
-  // Clone products for seamless animation loop
+  // Clone products for seamless animation loop (for the sidebar)
   const products = document.querySelectorAll('.sidebar-products .product-card');
   products.forEach(product => {
     sidebarProducts.appendChild(product.cloneNode(true));
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateLayout() {
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-    
-    // Always enforce desktop-style sidebar positioning
+
+    // Always enforce desktop-style sidebar positioning (for the sidebar)
     sidebar.style.position = 'sticky';
-    sidebar.style.top = `${config.headerHeight + 20}px`; // 20px extra spacing
+    sidebar.style.top = `${config.headerHeight + 20}px`; // 20px extra spacing (for the sidebar)
     sidebar.style.width = `${config.sidebarWidth}px`;
     sidebar.style.marginLeft = `${config.sidebarOffset}px`;
-    sidebar.style.height = `${viewportHeight - config.headerHeight - 40}px`; // Dynamic height
-    
+    sidebar.style.height = `${viewportHeight - config.headerHeight - 40}px`; // Dynamic height (for the sidebar)
+
 
     // Control animation based on visibility
     if (isElementVisible(sidebar)) {
@@ -61,13 +61,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 10);
   }
 
-  // Visibility Checker (for performance)
+  // Visibility Checker (for performance) (for the sidebar)
   function isElementVisible(el) {
     const rect = el.getBoundingClientRect();
     return (
-      rect.top <= window.innerHeight && 
-      rect.bottom >= 0 && 
-      rect.width > 0 && 
+      rect.top <= window.innerHeight &&
+      rect.bottom >= 0 &&
+      rect.width > 0 &&
       rect.height > 0
     );
   }
@@ -84,10 +84,10 @@ document.addEventListener('DOMContentLoaded', function() {
     sidebarProducts.style.animationPlayState = 'running';
   });
 
-  // Performance-optimized event listeners
+  // Performance-optimized event listeners (for the sidebar)
   function debounce(fn, delay) {
     let timeout;
-    return function() {
+    return function () {
       clearTimeout(timeout);
       timeout = setTimeout(fn, delay);
     };
@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
   updateLayout();
 });
 
-// ===== DYNAMIC CSS INJECTION =====
-document.addEventListener('DOMContentLoaded', function() {
+// DYNAMIC CSS INJECTION
+document.addEventListener('DOMContentLoaded', function () {
   // Inject keyframe animation via JS
   const style = document.createElement('style');
   style.textContent = `

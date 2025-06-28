@@ -12,29 +12,41 @@
 </head>
 
 <body>
+    <!-- OVERLAY -->
     <div id="overlay"></div>
+    <!-- HEADER -->
+    <div id="header-sentinel"></div>
     <header class="main-header">
         <a class="logo" href="index.html">ProFans</a>
+        <button class="nav-toggle" aria-label="Menu open/close" aria-expanded="false">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </button>
         <nav class="nav-links">
             <a href="index.html">Home</a>
             <a href="products.html">Products</a>
             <a href="about.html">About us</a>
-            <a href="">FAQ</a>
+            <a href="faq.html">FAQ</a>
+            <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display:none">
+                <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="cart-count-badge" id="mobileCartCount">0</span>
+                Cart
+            </a>
         </nav>
-        <button class="cart-button">
-            <i class="fas fa-shopping-cart"></i>
-            <span id="cartCount" class="cart-count-badge">0</span>
+        <button class="cart-button" aria-label="Warenkorb anzeigen" id="headerCartButton">
+            <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+            <span class="cart-count-badge" id="cartCount">0</span>
         </button>
     </header>
 
-    <!-- Off-Canvas Cart -->
+    <!-- CART PANEL -->
     <aside class="cart-panel" id="cartPanel">
         <div class="cart-header">
             <h2>Your Cart</h2>
             <button class="close-cart" id="closeCart">&times;</button>
         </div>
         <div class="cart-content">
-            <!-- Items in the cart will be added here later -->
             <p>Your cart is currently empty.</p>
         </div>
         <div class="cart-footer">
@@ -45,8 +57,9 @@
             <button class="checkout-button">CHECKOUT</button>
         </div>
     </aside>
-    <main>
 
+    <!-- MAIN CONTENT -->
+    <main>
         <div class="checkout-timeline">
             <div class="timeline-step active" data-step="cart">
                 <div class="step-number">1</div>
@@ -65,11 +78,9 @@
         </div>
 
         <div class="cart-container">
-            <!-- Shopping Cart Section -->
             <div class="checkout-section active" id="cart-section">
                 <h1>Shopping Cart</h1>
                 <div class="cart-items">
-                    <!-- Cart items will be added here later -->
                 </div>
                 <div class="cart-summary">
                     <div class="summary-row total">
@@ -82,7 +93,7 @@
                 </div>
             </div>
 
-            <!-- Personal Info Section -->
+            <!-- PERSONAL INFO SECTION -->
             <div class="checkout-section" id="personal-section">
                 <h1>Personal Information</h1>
                 <form id="personalInfoForm" class="personal-info-form">
@@ -118,8 +129,8 @@
                         <label for="country">Country</label>
                         <select id="country" name="country" required>
                             <option value="">Select a country</option>
-                            <option value="DE">Germany</option>
-                            <option value="AT">Austria</option>
+                            <option value="DE">Austria</option>
+                            <option value="AT">Germany</option>
                             <option value="CH">Switzerland</option>
                         </select>
                     </div>
@@ -130,7 +141,7 @@
                 </div>
             </div>
 
-            <!-- Checkout Section -->
+            <!-- CHECKOUT SECTION -->
             <div class="checkout-section" id="checkout-section">
                 <h1>Payment</h1>
                 <div class="order-summary">
@@ -144,8 +155,6 @@
 
                 <div class="payment-details">
                     <form id="paymentForm" class="payment-form">
-
-                        <!-- Credit Card Fields -->
                         <div id="credit-card-fields" class="payment-fields">
                             <div class="form-group">
                                 <label for="cardName">Name on Card</label>
@@ -178,8 +187,10 @@
         </div>
     </main>
 
+    <!-- SCRIPT -->
     <script src="js/checkout.js"></script>
     <script src="js/shoppingCart.js"></script>
+    <script src="js/scrollLogicHeader.js"></script>
 </body>
 
 </html>

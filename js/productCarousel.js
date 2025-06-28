@@ -1,3 +1,4 @@
+// PRODUCT CAROUSEL
 document.addEventListener("DOMContentLoaded", () => {
   const productList = document.querySelector(".products__list");
   const prevBtn = document.querySelector(".products__arrow--prev");
@@ -6,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterTabs = document.querySelectorAll(".products__tab");
 
   let scrollAmount = 0;
-  const scrollStep = 300; 
+  const scrollStep = 300;
 
 
   prevBtn.addEventListener("click", () => {
@@ -55,9 +56,5 @@ document.addEventListener("DOMContentLoaded", () => {
   productList.addEventListener("scroll", updateArrowButtons);
   window.addEventListener("resize", updateArrowButtons);
 
-  updateArrowButtons(); 
+  updateArrowButtons();
 });
-
-
-
-

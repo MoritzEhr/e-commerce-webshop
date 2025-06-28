@@ -1,29 +1,11 @@
+/* HEADER */
 .main-header {
     color: var(--color-black);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
-@media (max-width: 1024px) {
-
-    .nav-open .nav-links {
-        background: var(--color-black);
-        color: var(--color-white);
-    }
-
-    .nav-toggle {
-        display: block;
-    }
-
-    .nav-toggle .bar {
-        background: var(--color-black);
-    }
-
-    .cart-count-badge {
-        display: none !important;
-    }
-}
-
+/* MAIN CONTENT */
 .main-container {
     max-width: 800px;
     margin: 0 auto;
@@ -45,6 +27,7 @@ h1 {
     line-height: 1.6;
 }
 
+/* ACCORDION */
 .accordion {
     margin-bottom: 40px;
     width: 100%;
@@ -58,11 +41,23 @@ h1 {
 
 .accordion-header {
     background-color: var(--color-shade1);
-    color: var(--color-bal);
+    color: var(--color-black);
     padding: 15px;
     cursor: pointer;
     font-weight: bold;
     user-select: none;
+}
+
+.accordion-header::before {
+    content: "+";
+    margin-right: 0.5rem;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+}
+
+.accordion-item.active .accordion-header::before {
+    content: "-";
 }
 
 .accordion-content {
@@ -80,18 +75,7 @@ h1 {
     margin-left: 40px;
 }
 
-.accordion-header::before {
-    content: "+";
-    margin-right: 0.5rem;
-    font-weight: bold;
-    display: inline-block;
-    width: 1rem;
-}
-
-.accordion-item.active .accordion-header::before {
-    content: "-";
-}
-
+/* CONTACT SECTION */
 .data-section {
     padding: 20px;
     background-color: var(--color-shade1);
@@ -101,4 +85,24 @@ h1 {
 
 .data-section h2 {
     font-size: larger;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+    .nav-open .nav-links {
+        background: var(--color-black);
+        color: var(--color-white);
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-toggle .bar {
+        background: var(--color-black);
+    }
+
+    .cart-count-badge {
+        display: none !important;
+    }
 }
