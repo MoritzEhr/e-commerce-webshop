@@ -266,6 +266,10 @@ button,
   cursor: pointer;
 }
 
+.product-card__add:hover {
+  background: var(--color-accent);
+}
+
 .products__view-all {
   display: block;
   text-align: center;
@@ -330,13 +334,13 @@ button,
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 20px;
-  color: #222;
+  color: var(--color-black);
 }
 
 .content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #666;
+  color: var(--color-shade3);
   margin-bottom: 30px;
 }
 
@@ -358,7 +362,6 @@ button,
 }
 
 /* MATERIALS SECTION */
-
 .materials-section {
   background-color: var(--color-shade1);
   padding: 50px;

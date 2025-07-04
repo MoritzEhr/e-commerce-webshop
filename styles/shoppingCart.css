@@ -1,6 +1,4 @@
-/* ===== SHOPPING CART STYLES ===== */
-
-/* ===== HEADER STYLES ===== */
+/*  HEADER STYLES  */
 .main-header {
   color: var(--color-black);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -26,7 +24,7 @@
   }
 }
 
-/* ===== CART CONTAINER ===== */
+/*  CART CONTAINER  */
 .cart-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -41,7 +39,7 @@
   margin-bottom: 2rem;
 }
 
-/* ===== CART ITEMS LIST ===== */
+/*  CART ITEMS LIST  */
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -49,7 +47,6 @@
   margin-bottom: 2rem;
 }
 
-/* Individual Cart Item */
 .cart-item {
   display: flex;
   align-items: center;
@@ -59,11 +56,6 @@
   border-radius: 4px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
-}
-
-.cart-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
 }
 
 .cart-item img {
@@ -92,7 +84,7 @@
   color: var(--color-primary);
 }
 
-/* ===== QUANTITY CONTROLS ===== */
+/*  QUANTITY CONTROLS  */
 .cart-item-quantity {
   display: flex;
   align-items: center;
@@ -126,7 +118,7 @@
   text-align: center;
 }
 
-/* ===== CART SUMMARY ===== */
+/*  CART SUMMARY  */
 .cart-summary {
   top: 2rem;
   border-top: 2px solid var(--color-shade2);
@@ -143,7 +135,7 @@
   align-items: center;
 }
 
-/* ===== CONTINUE BUTTON ===== */
+/*  CONTINUE BUTTON  */
 .continue-button {
   width: auto;
   padding: 1rem;
@@ -162,7 +154,7 @@
   transform: translateY(-2px);
 }
 
-/* ===== CHECKOUT TIMELINE ===== */
+/*  CHECKOUT TIMELINE  */
 .checkout-timeline {
   display: grid;
   grid-template-columns: repeat(5, 8rem);
@@ -225,7 +217,7 @@
   font-weight: 600;
 }
 
-/* ===== CHECKOUT SECTIONS ===== */
+/*  CHECKOUT SECTIONS  */
 .checkout-section {
   max-width: 1200px;
   margin: 40px auto;
@@ -274,7 +266,7 @@
   font-size: 1.3rem;
 }
 
-/* ===== PAYMENT SECTION ===== */
+/*  PAYMENT SECTION  */
 .payment-section {
   background-color: var(--color-white);
   border-radius: 4px;
@@ -291,7 +283,7 @@
   }
 }
 
-/* ===== FORM STYLES ===== */
+/*  FORM STYLES  */
 .form-row {
   display: flex;
   gap: 1rem;
@@ -345,7 +337,7 @@
   border-color: var(--color-accent);
 }
 
-/* ===== NAVIGATION BUTTONS ===== */
+/*  NAVIGATION BUTTONS  */
 .navigation-buttons {
   display: flex;
   margin-top: 2rem;
@@ -404,7 +396,7 @@ button.disabled {
   transform: translateY(-2px);
 }
 
-/* ===== FORM ACTIONS ===== */
+/*  FORM ACTIONS  */
 .form-actions {
   display: flex;
   justify-content: space-between;
@@ -412,7 +404,7 @@ button.disabled {
   gap: 1rem;
 }
 
-/* ===== ORDER SUCCESS ===== */
+/*  ORDER SUCCESS  */
 .order-success {
   display: flex;
   justify-content: center;
@@ -462,16 +454,13 @@ button.disabled {
   transform: translateY(-2px);
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Large screens */
+/*  RESPONSIVE DESIGN  */
 @media (max-width: 1200px) {
   .cart-container {
     padding: 1.5rem;
   }
 }
 
-/* ── Medium Devices (bis 992px) ── */
 @media (max-width: 992px) {
   .cart-item {
     gap: 1rem;
@@ -492,7 +481,6 @@ button.disabled {
   }
 }
 
-/* Small screens */
 @media (max-width: 768px) {
 
   .cart-item {
@@ -541,7 +529,6 @@ button.disabled {
   }
 }
 
-/* Extra small screens */
 @media (max-width: 576px) {
   .cart-container h1 {
     font-size: 2rem;
