@@ -1,737 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProFans - Products</title>
-    <link rel="stylesheet" href="styles/global.css" />
-    <link rel="stylesheet" href="styles/products.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="icon" type="image/png" href="images/logo.png" />
-  </head>
 
-  <body class="products-page">
-    <!-- OVERLAY -->
-    <div id="overlay"></div>
-    <!-- HEADER -->
-    <div id="header-sentinel"></div>
-    <header class="main-header">
-      <a class="logo" href="index.html">ProFans</a>
-      <button
-        class="nav-toggle"
-        aria-label="Menu open/close"
-        aria-expanded="false"
-      >
-        <span class="bar bar1"></span>
-        <span class="bar bar2"></span>
-        <span class="bar bar3"></span>
-      </button>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="about.html">About us</a>
-        <a href="faq.html">FAQ</a>
-        <a
-          href="#"
-          class="mobile-cart-link"
-          id="mobileCartLink"
-          style="display: none"
-        >
-          <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
-          <span class="cart-count-badge" id="mobileCartCount">0</span>
-          Cart
-        </a>
-      </nav>
-      <button
-        class="cart-button"
-        aria-label="Warenkorb anzeigen"
-        id="headerCartButton"
-      >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProFans - Products</title>
+  <link rel="stylesheet" href="styles/global.css" />
+  <link rel="stylesheet" href="styles/products.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+</head>
+
+<body class="products-page">
+  <!-- OVERLAY -->
+  <div id="overlay"></div>
+  <!-- HEADER -->
+  <div id="header-sentinel"></div>
+  <header class="main-header">
+    <a class="logo" href="index.html">ProFans</a>
+    <button class="nav-toggle" aria-label="Menu open/close" aria-expanded="false">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Products</a>
+      <a href="about.html">About us</a>
+      <a href="faq.html">FAQ</a>
+      <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display: none">
         <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
-        <span class="cart-count-badge" id="cartCount">0</span>
-      </button>
-    </header>
+        <span class="cart-count-badge" id="mobileCartCount">0</span>
+        Cart
+      </a>
+    </nav>
+    <button class="cart-button" aria-label="Warenkorb anzeigen" id="headerCartButton">
+      <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+      <span class="cart-count-badge" id="cartCount">0</span>
+    </button>
+  </header>
 
-    <!-- CART PANEL -->
-    <aside class="cart-panel" id="cartPanel">
-      <div class="cart-header">
-        <h2>Your Cart</h2>
-        <button class="close-cart" id="closeCart">&times;</button>
+  <!-- CART PANEL -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-content">
+      <p>Your cart is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        Total: <span id="cartSubtotal">0.00 €</span>
       </div>
-      <div class="cart-content">
-        <p>Your cart is currently empty.</p>
-      </div>
-      <div class="cart-footer">
-        <div class="cart-subtotal">
-          Total: <span id="cartSubtotal">0.00 €</span>
+      <a href="shoppingCart.html" class="view-cart-button">VIEW CART</a>
+      <button class="checkout-button">CHECKOUT</button>
+    </div>
+  </aside>
+
+  <!-- SIDEBAR -->
+  <main class="products-page-container">
+    <div class="products">
+      <aside class="products-sidebar">
+        <h3>Buy More, Pay Less!</h3>
+        <div class="sidebar-scroll-container">
+          <div class="sidebar-products">
+            <article class="product-card">
+              <a href="ELVA&TOTAK.html" class="product-card__image-link">
+                <img src="images/bundle-1.png" alt="ELVA & TOTAK" class="product-card__img" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__title">ELVA & TOTAK</h3>
+                <div class="stars">★ ★ ★ ★ ★</div>
+                <div class="product-card__footer">
+                  <span class="product-card__price">149,99 €</span>
+                  <button class="product-card__add" data-name="ELVA & TOTAK" data-price="149.99"
+                    data-image="images/bundle-1.png">+</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card">
+              <a href="VINSTRE&EDSVIKEN.html" class="product-card__image-link">
+                <img src="images/bundle-2.png" alt="VINSTRE & EDSVIKEN" class="product-card__img" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__title">VINSTRE & EDSVIKEN</h3>
+                <div class="stars">★ ★ ★ ★ ☆</div>
+                <div class="product-card__footer">
+                  <span class="product-card__price">169,99 €</span>
+                  <button class="product-card__add" data-name="VINSTRE & EDSVIKEN" data-price="169.99"
+                    data-image="images/bundle-2.png">+</button>
+                </div>
+              </div>
+            </article>
+            <article class="product-card">
+              <a href="VOSSO&PEDJA.html" class="product-card__image-link">
+                <img src="images/bundle-3.png" alt="VOSSO & PEDJA" class="product-card__img" />
+              </a>
+              <div class="product-card__body">
+                <h3 class="product-card__title">VOSSO & PEDJA</h3>
+                <div class="stars">★ ★ ★ ★ ☆</div>
+                <div class="product-card__footer">
+                  <span class="product-card__price">99,99 €</span>
+                  <button class="product-card__add" data-name="VOSSO & PEDJA" data-price="99.99"
+                    data-image="images/bundle-3.png">+</button>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
-        <a href="shoppingCart.html" class="view-cart-button">VIEW CART</a>
-        <button class="checkout-button">CHECKOUT</button>
-      </div>
-    </aside>
+      </aside>
 
-    <main class="products-page-container">
-      <div class="products">
-        <!-- SIDEBAR -->
-        <aside class="products-sidebar">
-          <h3>Our Summer Hits</h3>
-          <div class="sidebar-scroll-container">
-            <div class="sidebar-products">
-              <article class="product-card">
-                <a
-                  href="single products/product-sokosti.html"
-                  class="product-card__image-link"
-                >
-                  <img
-                    src="images/blue-fan.png"
-                    alt="SOKOSTI desk fan"
-                    class="product-card__img"
-                  />
-                </a>
-                <div class="product-card__body">
-                  <h3 class="product-card__title">SOKOSTI desk fan</h3>
-                  <div class="stars">★ ★ ★ ★ ☆</div>
-                  <div class="product-card__footer">
-                    <span class="product-card__price">39,99 €</span>
-                    <button
-                      class="product-card__add"
-                      data-name="SOKOSTI desk fan"
-                      data-price="39.99"
-                      data-image="images/blue-fan.png"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </article>
-              <article class="product-card">
-                <a
-                  href="single products/product-tohmajoki.html"
-                  class="product-card__image-link"
-                >
-                  <img
-                    src="images/tohmajoki.png"
-                    alt="TOHMAJOKI standing fan"
-                    class="product-card__img"
-                  />
-                </a>
-                <div class="product-card__body">
-                  <h3 class="product-card__title">TOHMAJOKI standing fan</h3>
-                  <div class="stars">★ ★ ★ ★ ☆</div>
-                  <div class="product-card__footer">
-                    <span class="product-card__price">59,99 €</span>
-                    <button
-                      class="product-card__add"
-                      data-name="TOHMAJOKI standing fan"
-                      data-price="59.99"
-                      data-image="images/tohmajoki.png"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </article>
-              <article class="product-card">
-                <a
-                  href="single products/product-edsviken.html"
-                  class="product-card__image-link"
-                >
-                  <img
-                    src="images/silver-tower-fan.png"
-                    alt="Silver tower fan"
-                    class="product-card__img"
-                  />
-                </a>
-                <div class="product-card__body">
-                  <h3 class="product-card__title">EDSVIKEN tower fan</h3>
-                  <div class="stars">★ ★ ★ ★ ★</div>
-                  <div class="product-card__footer">
-                    <span class="product-card__price">89,99 €</span>
-                    <button
-                      class="product-card__add"
-                      data-name="EDSVIKEN tower fan"
-                      data-price="89.99"
-                      data-image="images/silver-tower-fan.png"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </article>
-              <article class="product-card">
-                <a
-                  href="single products/product-sokosti.html"
-                  class="product-card__image-link"
-                >
-                  <img
-                    src="images/blue-fan.png"
-                    alt="SOKOSTI desk fan"
-                    class="product-card__img"
-                  />
-                </a>
-                <div class="product-card__body">
-                  <h3 class="product-card__title">SOKOSTI Desk fan</h3>
-                  <div class="stars">★ ★ ★ ★ ☆</div>
-                  <div class="product-card__footer">
-                    <span class="product-card__price">39,99 €</span>
-                    <button
-                      class="product-card__add"
-                      data-name="SOKOSTI desk fan"
-                      data-price="39.99"
-                      data-image="images/blue-fan.png"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </article>
-              <article class="product-card">
-                <a
-                  href="single products/product-tohmajoki.html"
-                  class="product-card__image-link"
-                >
-                  <img
-                    src="images/tohmajoki.png"
-                    alt="TOHMAJOKI standing fan"
-                    class="product-card__img"
-                  />
-                </a>
-                <div class="product-card__body">
-                  <h3 class="product-card__title">TOHMAJOKI standing fan</h3>
-                  <div class="stars">★ ★ ★ ★ ☆</div>
-                  <div class="product-card__footer">
-                    <span class="product-card__price">59,99 €</span>
-                    <button
-                      class="product-card__add"
-                      data-name="TOHMAJOKI standing fan"
-                      data-price="59.99"
-                      data-image="images/tohmajoki.png"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </article>
-              <article class="product-card">
-                <a
-                  href="single products/product-edsviken.html"
-                  class="product-card__image-link"
-                >
-                  <img
-                    src="images/silver-tower-fan.png"
-                    alt="silver tower fan"
-                    class="product-card__img"
-                  />
-                </a>
-                <div class="product-card__body">
-                  <h3 class="product-card__title">EDSVIKEN tower fan</h3>
-                  <div class="stars">★ ★ ★ ★ ☆</div>
-                  <div class="product-card__footer">
-                    <span class="product-card__price">89,99 €</span>
-                    <button
-                      class="product-card__add"
-                      data-name="EDSVIKEN tower fan"
-                      data-price="89.99"
-                      data-image="images/silver-tower-fan.png"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
-              </article>
+      <div class="products-grid-container">
+        <div class="search-box">
+          <input type="text" placeholder="Search for fans..." />
+          <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="products__grid">
+          <div class="product-card">
+            <a href="product-tohmajoki.html" class="product-card__image-link">
+              <img src="images/tohmajoki.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">TOHMAJOKI Standing Fan</h3>
+              <div class="stars">★ ★ ★ ★ ☆</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">59,99 €</span>
+                <button class="product-card__add" data-name="TOHMAJOKI Standing Fan" data-price="59.99"
+                  data-image="images/tohmajoki.png">
+                  +
+                </button>
+              </div>
             </div>
           </div>
-        </aside>
 
-        <div class="products-grid-container">
-          <div class="search-box">
-            <input type="text" placeholder="Search for fans..." />
-            <button><i class="fas fa-search"></i></button>
+          <div class="product-card">
+            <a href="product-sokosti.html" class="product-card__image-link">
+              <img src="images/blue-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">SOKOSTI Desk Fan</h3>
+              <div class="stars">★ ★ ★ ★ ☆</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">39,99 €</span>
+                <button class="product-card__add" data-name="SOKOSTI Desk Fan" data-price="39.99"
+                  data-image="images/blue-fan.png">
+                  +
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div class="products__grid">
-            <div class="product-card">
-              <a
-                href="single products/product-tohmajoki.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/tohmajoki.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">TOHMAJOKI standing fan</h3>
-                <div class="stars">★ ★ ★ ★ ☆</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">59,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="TOHMAJOKI standing fan"
-                    data-price="59.99"
-                    data-image="images/tohmajoki.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-lovatnet.html" class="product-card__image-link">
+              <img src="images/bronze-ceiling-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">LOVATNET Ceiling Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">219,99 €</span>
+                <button class="product-card__add" data-name="LOVATNET Ceiling Fan" data-price="219.99"
+                  data-image="images/bronze-ceiling-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-sokosti.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/blue-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">SOKOSTI desk fan</h3>
-                <div class="stars">★ ★ ★ ★ ☆</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">39,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="SOKOSTI desk fan"
-                    data-price="39.99"
-                    data-image="images/blue-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-savalen.html" class="product-card__image-link">
+              <img src="images/retro-style-ceiling-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">SAVALEN Ceiling Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">179,99 €</span>
+                <button class="product-card__add" data-name="SAVALEN Ceiling Fan" data-price="179.99"
+                  data-image="images/retro-style-ceiling-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-lovatnet.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/bronze-ceiling-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">LOVATNET ceiling fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">219,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="LOVATNET ceiling fan"
-                    data-price="219.99"
-                    data-image="images/bronze-ceiling-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-frycken.html" class="product-card__image-link">
+              <img src="images/bluetooth-ceiling-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">FRYKEN Ceiling Fan</h3>
+              <div class="stars">★ ★ ★ ★ ☆</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">119,99 €</span>
+                <button class="product-card__add" data-name="FRYKEN Ceiling Fan" data-price="119.99"
+                  data-image="images/bluetooth-ceiling-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-savalen.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/retro-style-ceiling-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">SAVALEN Ceiling Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">179,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="SAVALEN Ceiling Fan"
-                    data-price="179.99"
-                    data-image="images/retro-style-ceiling-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-tiken.html" class="product-card__image-link">
+              <img src="images/wooden-standing-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">TIKEN Standing Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">79,99 €</span>
+                <button class="product-card__add" data-name="TIKEN Standing Fan" data-price="79.99"
+                  data-image="images/wooden-standing-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-frycken.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/bluetooth-ceiling-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">FRYKEN Ceiling Fan</h3>
-                <div class="stars">★ ★ ★ ★ ☆</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">119,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="FRYKEN Ceiling Fan"
-                    data-price="119.99"
-                    data-image="images/bluetooth-ceiling-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-yngaren.html" class="product-card__image-link">
+              <img src="images/retro-style-standing-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">YNGAREN Standing Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">159,99 €</span>
+                <button class="product-card__add" data-name="YNGAREN Standing Fan" data-price="159.99"
+                  data-image="images/retro-style-standing-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-tiken.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/wooden-standing-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">TIKEN Standing Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">79,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="TIKEN Standing Fan"
-                    data-price="79.99"
-                    data-image="images/wooden-standing-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-totak.html" class="product-card__image-link">
+              <img src="images/modern-standing-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">TOTAK Tower Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">129,99 €</span>
+                <button class="product-card__add" data-name="TOTAK Tower Fan" data-price="129.99"
+                  data-image="images/modern-standing-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-yngaren.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/retro-style-standing-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">YNGAREN Standing Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">159,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="YNGAREN Standing Fan"
-                    data-price="159.99"
-                    data-image="images/retro-style-standing-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-vinstre.html" class="product-card__image-link">
+              <img src="images/white-tower-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">VINSTRE Tower Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">109,99 €</span>
+                <button class="product-card__add" data-name="VINSTRE Tower Fan" data-price="109.99"
+                  data-image="images/white-tower-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-totak.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/modern-standing-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">TOTAK Tower Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">129,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="TOTAK Tower Fan"
-                    data-price="129.99"
-                    data-image="images/modern-standing-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-hornavan.html" class="product-card__image-link">
+              <img src="images/elegant-outdoor-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">HORNAVAN Garden Fan</h3>
+              <div class="stars">★ ★ ★ ★ ☆</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">199,99 €</span>
+                <button class="product-card__add" data-name="HORNAVAN Garden Fan" data-price="199.99"
+                  data-image="images/elegant-outdoor-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-vinstre.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/white-tower-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">VINSTRE Tower Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">109,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="VINSTRE Tower Fan"
-                    data-price="109.99"
-                    data-image="images/white-tower-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <span class="product-badge">BESTSELLER!</span>
+            <a href="product-edsviken.html" class="product-card__image-link">
+              <img src="images/silver-tower-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">EDSVIKEN Tower Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">89,99 €</span>
+                <button class="product-card__add" data-name="EDSVIKEN Tower Fan" data-price="89.99"
+                  data-image="images/silver-tower-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-hornavan.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/elegant-outdoor-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">HORNAVAN garden Fan</h3>
-                <div class="stars">★ ★ ★ ★ ☆</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">199,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="HORNAVAN garden Fan"
-                    data-price="199.99"
-                    data-image="images/elegant-outdoor-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-glomma.html" class="product-card__image-link">
+              <img src="images/usb-c-fans.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">GLOMMA Smartphone Fans</h3>
+              <div class="stars">★ ★ ★ ★ ☆</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">9,99 €</span>
+                <button class="product-card__add" data-name="GLOMMA Smartphone Fans" data-price="9.99"
+                  data-image="images/usb-c-fans.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <span class="product-badge">BESTSELLER!</span>
-              <a
-                href="single products/product-edsviken.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/silver-tower-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">EDSVIKEN Tower Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">89,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="EDSVIKEN Tower Fan"
-                    data-price="89.99"
-                    data-image="images/silver-tower-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-vosso.html" class="product-card__image-link">
+              <img src="images/modern-desk-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">VOSSO Desk Fan</h3>
+              <div class="stars">★ ★ ★ ★ ☆</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">49,99 €</span>
+                <button class="product-card__add" data-name="VOSSO Desk Fan" data-price="49.99"
+                  data-image="images/modern-desk-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-glomma.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/usb-c-fans.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">GLOMMA Smartphone Fans</h3>
-                <div class="stars">★ ★ ★ ★ ☆</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">9,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="GLOMMA Smartphone Fans"
-                    data-price="9.99"
-                    data-image="images/usb-c-fans.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-pedja.html" class="product-card__image-link">
+              <img src="images/high-tech-desk-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">PEDJA Desk Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">69,99 €</span>
+                <button class="product-card__add" data-name="PEDJA Desk Fan" data-price="69.99"
+                  data-image="images/high-tech-desk-fan.png">
+                  +
+                </button>
               </div>
             </div>
+          </div>
 
-            <div class="product-card">
-              <a
-                href="single products/product-vosso.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/modern-desk-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">VOSSO Desk Fan</h3>
-                <div class="stars">★ ★ ★ ★ ☆</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">49,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="VOSSO Desk Fan"
-                    data-price="49.99"
-                    data-image="images/modern-desk-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <a
-                href="single products/product-pedja.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/high-tech-desk-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">PEDJA Desk Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">69,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="PEDJA Desk Fan"
-                    data-price="69.99"
-                    data-image="images/high-tech-desk-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="product-card">
-              <a
-                href="single products/product-elva.html"
-                class="product-card__image-link"
-              >
-                <img
-                  src="images/classic-standing-fan.png"
-                  alt="Produktbild"
-                  class="product-card__img"
-                />
-              </a>
-              <div class="product-card__body">
-                <h3 class="product-card__title">ELVA Standing Fan</h3>
-                <div class="stars">★ ★ ★ ★ ★</div>
-                <div class="product-card__footer">
-                  <span class="product-card__price">39,99 €</span>
-                  <button
-                    class="product-card__add"
-                    data-name="ELVA Standing Fan"
-                    data-price="39.99"
-                    data-image="images/classic-standing-fan.png"
-                  >
-                    +
-                  </button>
-                </div>
+          <div class="product-card">
+            <a href="product-elva.html" class="product-card__image-link">
+              <img src="images/classic-standing-fan.png" alt="Produktbild" class="product-card__img" />
+            </a>
+            <div class="product-card__body">
+              <h3 class="product-card__title">ELVA Standing Fan</h3>
+              <div class="stars">★ ★ ★ ★ ★</div>
+              <div class="product-card__footer">
+                <span class="product-card__price">39,99 €</span>
+                <button class="product-card__add" data-name="ELVA Standing Fan" data-price="39.99"
+                  data-image="images/classic-standing-fan.png">
+                  +
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer container">
-      <div class="footer-top">
-        <div class="footer-column about">
-          <h3>ProFans</h3>
-          <p>
-            We offer premium fans that provide you with comfortable cooling and
-            modern style.
-          </p>
-        </div>
-
-        <div class="footer-column links">
-          <h4>Pages</h4>
-          <ul>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-        <div class="footer-column links">
-          <h4>Our Fans</h4>
-          <ul>
-            <li><a href="products.html">Ceiling fans</a></li>
-            <li><a href="products.html">Standing fans</a></li>
-            <li><a href="products.html">Special fans</a></li>
-          </ul>
-        </div>
-        <div class="footer-column links">
-          <h4>Follow Us</h4>
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/people/ProFans/61576991134328/"
-                ><i class="fab fa-facebook-f"></i><span> Facebook</span></a
-              >
-            </li>
-            <li>
-              <a href="https://x.com/ProFans_jena"
-                ><i class="fab fa-twitter"></i><span> Twitter</span></a
-              >
-            </li>
-            <li>
-              <a href="https://www.instagram.com/ProFans_jena/"
-                ><i class="fab fa-instagram"></i><span> Instagram</span></a
-              >
-            </li>
-          </ul>
-        </div>
+  <!-- FOOTER -->
+  <footer class="site-footer container">
+    <div class="footer-top">
+      <div class="footer-column about">
+        <h3>ProFans</h3>
+        <p>
+          We offer premium fans that provide you with comfortable cooling and
+          modern style.
+        </p>
       </div>
-    </footer>
 
-    <!-- SCRIPT -->
-    <script src="js/shoppingCart.js"></script>
-    <script src="js/searchBar.js"></script>
-    <script src="js/scrollLogicHeader.js"></script>
-    <script src="js/dynamic__website.js"></script>
-  </body>
+      <div class="footer-column links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-column links">
+        <h4>Our Fans</h4>
+        <ul>
+          <li><a href="products.html">Ceiling fans</a></li>
+          <li><a href="products.html">Standing fans</a></li>
+          <li><a href="products.html">Special fans</a></li>
+        </ul>
+      </div>
+      <div class="footer-column links">
+        <h4>Follow Us</h4>
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/people/ProFans/61576991134328/"><i class="fab fa-facebook-f"></i><span>
+                Facebook</span></a>
+          </li>
+          <li>
+            <a href="https://x.com/ProFans_jena"><i class="fab fa-twitter"></i><span> Twitter</span></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/ProFans_jena/"><i class="fab fa-instagram"></i><span>
+                Instagram</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script src="js/shoppingCart.js"></script>
+  <script src="js/searchBar.js"></script>
+  <script src="js/scrollLogicHeader.js"></script>
+  <script src="js/dynamic__website.js"></script>
+</body>
+
 </html>

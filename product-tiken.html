@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProFans - TIKEN</title>
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/single-product.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+
+<body class="products-page">
+    <div id="overlay"></div>
+    <div id="header-sentinel"></div>
+    <header class="main-header">
+        <a class="logo" href="index.html">ProFans</a>
+        <button class="nav-toggle" aria-label="Menu open/close" aria-expanded="false">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </button>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html" class="active">Products</a>
+            <a href="about.html">About us</a>
+            <a href="faq.html">FAQ</a>
+            <a href="#" class="mobile-cart-link" id="mobileCartLink" style="display:none">
+                <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+                <span class="cart-count-badge" id="mobileCartCount">0</span>
+                Cart
+            </a>
+        </nav>
+        <button class="cart-button" aria-label="Warenkorb anzeigen" id="headerCartButton">
+            <span class="cart-icon"><i class="fas fa-shopping-cart"></i></span>
+            <span class="cart-count-badge" id="cartCount">0</span>
+        </button>
+    </header>
+
+    <!--CART-->
+    <aside class="cart-panel" id="cartPanel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-content">
+            <p>Your cart is currently empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                Total: <span id="cartSubtotal">0.00 €</span>
+            </div>
+            <a href="shoppingCart.html" class="view-cart-button">VIEW CART</a>
+            <button class="checkout-button">CHECKOUT</button>
+        </div>
+    </aside>
+
+    <!--PRODUCT-->
+    <main class="product-page">
+        <div class="product-image-container">
+            <img src="images/wooden-standing-fan.png" alt="Product Name" class="product-image">
+        </div>
+        <div class="product-details">
+            <h1 class="product-title">TIKEN</h1>
+            <p class="product-price"> 79,99 €</p>
+            <p class="product-description">
+                Elevate your space with the TIKEN Standing Fan, where rustic charm meets contemporary functionality.
+                Designed with three sturdy wooden legs, this fan adds a touch of organic warmth to any room while
+                delivering powerful airflow. Choose from multiple speed settings to customize your cooling experience,
+                all with whisper-quiet operation that won't disrupt your peace. The adjustable tilt head lets you direct
+                the breeze exactly where you need it, while the stable tripod base ensures reliable performance in any
+                corner of your home. Perfect for living rooms, bedrooms, or studios, the TIKEN fan blends seamlessly
+                with both modern and traditional decor. Enjoy the perfect balance of style and comfort with this
+                beautifully crafted standing fan that keeps you cool in timeless fashion.
+            </p>
+            <button class="product-card__add" data-name="TIKEN Standing Fan" data-price="79.99"
+                data-image="images/wooden-standing-fan.png">
+                Add to Cart
+            </button>
+        </div>
+    </main>
+    <div class="also-bought">
+        <h3 class="also-bought-title">Others Also Bought</h3>
+        <a href="product-tohmajoki.html" class="recommended-fan-link">
+            <div class="recommended-fan">
+                <img src="images/tohmajoki.png" alt="TOHAMJOKI">
+                <div class="stars">★★★★★</div>
+                <div class="recommended-fan-name">TOHMAJOKI</div>
+                <div class="recommended-fan-price">59,99 €</div>
+            </div>
+        </a>
+        <a href="product-sokosti.html" class="recommended-fan-link">
+            <div class="recommended-fan">
+                <img src="images/blue-fan.png" alt="SOKOSTI">
+                <div class="stars">★★★★☆</div>
+                <div class="recommended-fan-name">SOKOSTI</div>
+                <div class="recommended-fan-price">39,99 €</div>
+            </div>
+        </a>
+        <a href="product-frycken.html" class="recommended-fan-link">
+            <div class="recommended-fan">
+                <img src="images/bluetooth-ceiling-fan.png" alt="FRYCKEN">
+                <div class="stars">★★★★☆</div>
+                <div class="recommended-fan-name">FRYCKEN</div>
+                <div class="recommended-fan-price">119,99 €</div>
+            </div>
+        </a>
+    </div>
+
+    <!--FOOTER-->
+    <footer class="site-footer container">
+        <div class="footer-top">
+            <div class="footer-column about">
+                <h3>ProFans</h3>
+                <p>
+                    We offer premium fans that provide you with comfortable cooling and
+                    modern style.
+            </div>
+            <div class="footer-column links">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Our Fans</h4>
+                <ul>
+                    <li><a href="products.html">Ceiling fans</a></li>
+                    <li><a href="products.html">Standing fans</a></li>
+                    <li><a href="products.html">Special fans</a></li>
+                </ul>
+            </div>
+            <div class="footer-column links">
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/profile.php?id=61576991134328"><i
+                                class="fab fa-facebook-f"></i><span> Facebook</span></a></li>
+                    <li><a href="https://x.com/profans_jena"><i class="fab fa-twitter"></i><span>
+                                Twitter</span></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/profans_jena/"><i class="fab fa-instagram"></i><span>
+                                Instagram</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scrollLogicHeader.js"></script>
+    <script src="js/shoppingCart.js"></script>
+    <script src="js/also-bought.js"></script>
+</body>
+
+</html>

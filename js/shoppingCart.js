@@ -30,7 +30,7 @@ function renderCart() {
 
   if (cartItems.length === 0) {
     cartContent.innerHTML = "<p>Your cart is currently empty.</p>";
-    cartSubtotalEl.textContent = "€0.00";
+    cartSubtotalEl.textContent = "0,00 €";
     cartCount.style.display = "none";
     return;
   }
@@ -68,8 +68,8 @@ function renderCart() {
 
     const qtyPrice = document.createElement("div");
     qtyPrice.className = "cart-item-quantity-price";
-    const priceFormatted = parseFloat(item.price).toFixed(2);
-    qtyPrice.textContent = `${item.quantity} × €${priceFormatted}`;
+    const priceFormatted = parseFloat(item.price).toLocaleString(2);
+    qtyPrice.textContent = `${item.quantity} × ${priceFormatted}€`;
 
     details.appendChild(titleRow);
     details.appendChild(qtyPrice);
@@ -83,11 +83,11 @@ function renderCart() {
   const subtotal = cartItems.reduce((sum, item) => {
     return sum + parseFloat(item.price) * item.quantity;
   }, 0);
-  cartSubtotalEl.textContent = `€${subtotal.toFixed(2)}`;
+  cartSubtotalEl.textContent = `${subtotal.toLocaleString(2)}€`;
 
   const checkoutTotal = document.getElementById("checkoutTotal");
   if (checkoutTotal) {
-    checkoutTotal.textContent = `€${subtotal.toFixed(2)}`;
+    checkoutTotal.textContent = `${subtotal.toLocaleString(2)}€`;
   }
 
   const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (cartItems.length === 0) {
       cartItemsContainer.innerHTML = "<p>Your cart is currently empty.</p>";
-      document.getElementById("total").textContent = "€0.00";
+      document.getElementById("total").textContent = "0,00€";
       return;
     }
 
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="cart-item-details">
           <div class="cart-item-name">${item.name}</div>
           <div class="cart-item-qty-price">
-            ${item.quantity} × €${parseFloat(item.price).toFixed(2)}
+            ${item.quantity} × ${parseFloat(item.price).toLocaleString(2)}€
           </div>
         </div>
       `;
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
       subtotal += item.quantity * parseFloat(item.price);
     });
 
-    document.getElementById("total").textContent = `€${subtotal.toFixed(2)}`;
+    document.getElementById("total").textContent = `${subtotal.toLocaleString(2)}€`;
   }
 
   renderCart();
